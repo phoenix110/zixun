@@ -1,0 +1,5 @@
+package com.ionic1021.starter.wxapi;
+
+public class WXPayEntryActivity extends EntryActivity {
+
+}

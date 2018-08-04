@@ -1,0 +1,75 @@
+import { Component } from '@angular/core';
+import { ViewController , NavParams } from 'ionic-angular';
+import { ActionSheetController } from 'ionic-angular';
+import { NativeService } from "../../../providers/NativeService";
+import $ from 'jquery';
+
+@Component({
+  selector: 'page-helpinfo',
+  templateUrl: 'helpinfo.html'
+})
+export class HelpinfoPage1 {
+	item:any = {};
+  changes:string ="";
+  constructor(
+    private viewCtrl: ViewController,
+    private navParams: NavParams,
+    private nativeService: NativeService,
+    public actionSheetCtrl: ActionSheetController
+  ) {
+    this.item = this.navParams.get('item');
+  }
+  back(){
+  	this.viewCtrl.dismiss();
+  }
+  //上传文件
+  upIdcardThumb(type){
+    this.presentActionSheet(type);
+  }
+
+  presentActionSheet(type){
+    let that = this;
+    let actionSheet = this.actionSheetCtrl.create({
+      title: '选择上传途径',
+      buttons: [
+        {
+          text: '文件',
+          handler: () => {
+            that.nativeService.getMultiplePicture({//从相册多选
+              maximumImagesCount: 1,
+              destinationType: 1//期望返回的图片格式,1图片路径
+            }).subscribe(imgs => {
+              this.changes=imgs.name;
+              this.nativeService.showToast('上传成功！');
+            });
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
+  diShow(){
+    $(".box_window").show();
+  }
+  closeBtn(){
+    $(".box_window").hide();
+  }
+  submitMsg(){
+    var titles=$("#title").val();//项目名称
+    var classifys=$("#classify").val(); //项目分类
+    var address=$("#address").val();//工厂地址
+    var msg_s=$("#msg_s").val();//项目描述
+    var imgName=this.changes;//图片的名称
+    var dateOver=$("#dateOver").val();// 完工时期
+    var dateTel=$("#dateTel").val();//联系电话
+    //var list=checkbox_s1  //选择的所有设计阶段集合
+    if(titles!=""&&classifys!=""&&address!=""&&msg_s!=""&&dateOver!=""&&dateTel!=""){
+      this.nativeService.showToast('可以发送请求了!');
+    }else{
+      this.nativeService.showToast('信息必须填写完整！');
+    }
+  }
+}
+
+

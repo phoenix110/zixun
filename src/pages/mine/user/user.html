@@ -1,0 +1,117 @@
+
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 我的主页 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+ <div class="ucontent_wrap">
+     
+     <div class="page_top">
+        <div class="page_pic">
+          <img src="{{uinfo.avatar}}" alt="{{uinfo.nickname}}" title="{{uinfo.nickname}}">
+        </div>
+        <p class="page_name">{{uinfo.nickname}}</p>
+        <div class="page_commends">
+          <span>用户评价</span>
+          <div class="starts">
+              <i [ngClass]="{'on':uinfo.comment > 0}"></i>
+              <i [ngClass]="{'on':uinfo.comment > 1}"></i>
+              <i [ngClass]="{'on':uinfo.comment > 2}"></i>
+              <i [ngClass]="{'on':uinfo.comment > 3}"></i>
+              <i [ngClass]="{'on':uinfo.comment > 4}"></i>
+          </div>
+          <em>{{uinfo.comment}}</em>
+        </div>
+        <div class="page_skill">
+          <span class="label">擅长领域</span>
+          <div class="infos">
+            <span *ngFor="let kill of uinfo.skill">{{kill}}</span>
+          </div>
+        </div>
+        <p class="page_intro">{{uinfo.introduce}}</p>
+     </div>
+     <div class="page_tab">
+       <span (click)="setmenu(1)" [ngClass]="{'active':menu==1}">成功案例<em>({{casecount}})</em></span>
+       <span (click)="setmenu(2)" [ngClass]="{'active':menu==2}">参与竞标<em>({{offercount}})</em></span>
+       <span (click)="setmenu(3)" [ngClass]="{'active':menu==3}">完成任务<em>({{overcount}})</em></span>
+     </div>
+     <div class="panel_item" *ngIf="menu==1">
+       <ul class="pcase_list">
+         <li *ngFor="let item of case" (click)="caseinfo(item)">
+           <div class="pcase_pic">
+             <a href="#">
+               <img src="{{item.img}}" alt="{{item.title}}" title="{{item.title}}">
+             </a>
+           </div>
+           <p class="pcase_name">
+             <a href="#">{{item.title}}</a>
+           </p>
+           <div class="pcase_state">
+             <span>{{item.catename}}</span>
+             <span>{{item.areaname}}</span>
+           </div>
+         </li>
+         <li *ngIf="case.length==0">无信息~</li>
+         
+       </ul>
+     </div>
+     <div class="panel_item" *ngIf="menu==2">
+       <ul class="ptask_list">
+          <li class="ptask_item" *ngFor="let o of offer"  (click)="demandinfo(o)">
+              <div class="money_name">
+                <span>￥{{o.reward}}</span>
+                <p><a href="#">{{o.name}}</a></p>
+              </div>
+              <div class="types">
+                <span *ngFor="let os of o.service">{{os}}</span>
+              </div>
+              <div class="states">
+                <span>竞标：<em>{{o.offercount}}</em></span>
+                <span>截止日期：<i>{{o.closedate}}</i></span>
+                <span>浏览：<i>{{o.viewcount}}</i></span>
+                <span>收藏：<i>{{o.collectcount}}</i></span>
+                <span style="color:red" *ngIf="o.offerstatus == 1">竞标成功</span>
+                <span style="color:green" *ngIf="o.offerstatus == 0 && o.status == 0">竞标中</span>
+                <span *ngIf="o.offerstatus == 0 && o.status > 0">竞标失败</span>
+                <span *ngIf="o.offerstatus == 2">竞标失败</span>
+                <span *ngIf="o.offerstatus == 3">竞标失败</span>
+              </div>
+          </li>
+         <li class="ptask_item" *ngIf="offer.length==0">无信息~</li>
+          
+       </ul>
+     </div>
+     <div class="panel_item" *ngIf="menu==3">
+       <ul class="ptask_list">
+            <li class="ptask_item" *ngFor="let d of demand"  (click)="demandinfo(d)">
+                <div class="money_name">
+                  <span>￥{{d.reward}}</span>
+                  <p><a href="#">{{d.name}}</a></p>
+                </div>
+                <div class="types">
+                <span *ngFor="let os of d.service">{{os}}</span>
+                </div>
+                <div class="states">
+                <span>竞标：<em>{{d.offercount}}</em></span>
+                <span>截止日期：<i>{{d.closedate}}</i></span>
+                  <span>完工日期：<i>{{d.finishdate}}</i></span>
+                </div>
+            </li>
+         <li class="ptask_item" *ngIf="demand.length==0">无信息~</li>
+            
+       </ul> 
+     </div>         
+  </div> 
+
+</ion-content>

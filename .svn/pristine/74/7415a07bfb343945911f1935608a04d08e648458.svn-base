@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons left (click)="back()">
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button>
+    </ion-buttons>
+
+    <ion-title mode="ios"> 设计师执业资格认证 </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+<div class="ucontent_wrap">
+    <div><!-- *ngIf="authStatus1!=2"-->
+         <div class="certify_section">
+             <h3 class="tit">上传执业资格证书原件照片/扫描件</h3>
+             <div class="upload_wrap">
+                 <div (click)="upIdcardThumb(1)">
+                     <p>
+                       <i></i>
+                       <span>正面</span>
+                    </p>
+                 </div>
+                 <!--<div (click)="upIdcardThumb(2)">
+                    <p>
+                       <i></i>
+                       <span>反面</span>
+                    </p>
+                 </div>-->
+             </div>
+              <div class="uploaded_area" *ngIf="upimg || upimg1">
+               <div *ngIf="upimg">
+                 <span><img src="{{ idcardthumb }}" alt="正面" title="正面"></span>
+               </div>
+               <!--<div *ngIf="upimg1">
+                 <span><img src="{{ idcardthumb1 }}" alt="反面" title="反面"></span>
+               </div>-->
+             </div>
+         </div>
+         <div class="submit_wrap">
+             <button type="submit" (click)="save()">提交认证</button>
+         </div>
+    </div>
+   <!-- <div *ngIf="authStatus==2">
+        <span class="warning_s">亲！请先保证雇主认证过了，再来设计师执业资格认证哟！</span>
+    </div>-->
+</div>
+
+
+</ion-content>

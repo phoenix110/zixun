@@ -1,0 +1,77 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="dismiss()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 案例详情 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+   
+   <div class="ucontent_wrap">
+     
+     <div class="case_section namedeal_box">
+        <h5 class="name">{{info.title}}</h5>
+        <p class="type">{{info.catename}}</p>
+        <div class="states">
+          <span>发布日期：<em>{{info.time}}</em></span>
+          <span>浏览：<em>{{info.views}}</em></span>
+        </div>
+     </div>
+     <div class="case_section case_pic">
+       <h3 class="tit">案例图片</h3>
+       <div class="slide_pic_wrap">
+       
+
+
+        <div class="swipe01">
+
+          <ion-slides *ngIf="info.image" loop="true" pager zoom="true" autoplay='4000' style="background-color: white">
+            <ion-slide *ngFor="let b of info.image">
+                  <img data-src="{{b.url}}">
+            </ion-slide>
+          </ion-slides>
+        
+          
+        </div>
+
+
+         
+       </div>
+      
+    </div>
+    <div class="case_section case_request">
+       <h3 class="tit">案例描述</h3>
+       <p>{{info.content}}</p>
+    </div>
+    <div class="case_section adr_time">
+       <h3 class="tit">{{info.areaname}}</h3>
+       <p>地址：{{info.address}}</p>
+       <p>开始时间：{{info.stime}}</p>
+       <p>结束时间：{{info.etime}}</p>
+    </div>
+    <div class="case_section recommend_task" *ngIf="recommend.length>0">
+       <h3 class="tit">推荐任务</h3>
+       <ul>
+         <li *ngFor="let r of recommend">
+           <h5>
+             <a href="#">{{r.name}}</a>
+           </h5>
+           <div class="states">
+             <em>￥{{r.reward}}</em>
+             <span>竞标{{r.offercount}}人  |  {{r.addtime}}</span>
+           </div>
+         </li>
+        
+       </ul>
+    </div>
+</div>  
+
+</ion-content>

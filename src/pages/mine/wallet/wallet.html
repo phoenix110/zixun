@@ -1,0 +1,71 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 我的钱包 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+   
+    
+    <div class="ucontent_wrap ucontent_wrap02">
+     
+     <div class="wallet_top">
+        <span>
+            <img src="{{info.avatar}}" alt="{{info.nickname}}" title="{{info.nickname}}">
+        </span>
+     </div>
+     <div class="extra_num">
+        <div class="extra">
+            <p><span><em>{{info.balance}}</em> 元</span><br>账户余额</p>         
+        </div>
+        <div class="num state">
+            <p><em>{{info.alreadycash}} 元</em><br>已提现金额</p>
+        </div>
+     </div>
+     <div class="wallet_cont">
+        <div class="wallet_tab">
+            <span (click)="setType(1)" [ngClass]="{'active':type==1}">交易记录</span>
+            <span (click)="setType(2)" [ngClass]="{'active':type==2}">充值记录</span>
+            <span (click)="setType(3)" [ngClass]="{'active':type==3}">提现记录</span>
+        </div>
+        <ul class="record_list">
+            <li *ngFor="let item of list">
+                <div>
+                    <p>{{item.note}}</p>
+                    <p>{{item.serialnumber}}</p>
+                </div>
+                <div>
+                  <div>
+                    <p>{{item.amount}}</p>
+                    <p>{{item.addtime}}</p>
+                  </div>
+                  <i [ngClass]="{'error':item.status!=1}"></i>
+                </div>
+            </li>
+
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="正在加载...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+            
+        </ul>
+     </div>
+     <div class="wallet_ope">
+        <a href="#" (click)="goCash()" class="getcash">提现</a>
+        <a href="#" (click)="goRecharge()" class="recharge active">充值</a>
+     </div>
+     
+</div>       
+
+</ion-content>

@@ -1,0 +1,222 @@
+<!--
+  Generated template for the MinePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title mode="ios">个人中心</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="outer-content">
+
+<div class="ucontent_wrap" *ngIf="isLogin == false && hidemodal == true">
+
+     <div class="center_top">
+       <span><img src="assets/img/user_pic.png" alt="登陆" title="登陆"></span>
+     </div>
+     <div class="center_opes">
+          <div><button (click)="goLogin()" type="button">登陆</button></div>
+          <div><button (click)="goReg()" type="button">注册</button></div>
+     </div>
+
+     <div class="user_list_wrap">
+      <ul class="employer_list">
+
+        <li (click)="goHelp()">
+          <a href="#">
+            <span class="icon09">帮助中心</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goAbout()">
+          <a href="#">
+            <span class="icon10">关于我们</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="selectViersion()">
+          <a href="#">
+            <span class="icon11">版本检测</span>
+            <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前版本号：{{versionCode}}.0.0</em>
+           <i></i>
+          </a>
+        </li>
+      </ul>
+     </div>
+
+ </div>
+
+<div class="ucontent_wrap" *ngIf="isLogin==true">
+
+     <div class="index_top" (click)="goSafe()">
+      <dl class="user_info">
+        <dt>
+          <a href="#">
+            <img src="{{uinfo.avatar}}" alt="{{uinfo.nickname}}" title="{{uinfo.nickname}}">
+          </a>
+        </dt>
+        <dd>
+            <p class="mt1" *ngIf="uinfo.nickname"><a href="#">{{uinfo.nickname}}</a></p>
+            <p class="mt1" *ngIf="!uinfo.nickname"><a href="#">{{uinfo.telphone}}</a></p>
+          <div class="commends" *ngIf="uinfo.type==2">
+            <span>评分</span>
+            <div class="starts">
+              <i [ngClass]="{'on':uinfo.comment > 0}"></i>
+              <i [ngClass]="{'on':uinfo.comment > 1}"></i>
+              <i [ngClass]="{'on':uinfo.comment > 2}"></i>
+              <i [ngClass]="{'on':uinfo.comment > 3}"></i>
+              <i [ngClass]="{'on':uinfo.comment > 4}"></i>
+            </div>
+            <em>{{uinfo.comment}}</em>
+          </div>
+        </dd>
+      </dl>
+      <div class="point_area">
+        <span class="point_icon"></span>
+      </div>
+     </div>
+     <div class="extra_num">
+      <div class="extra">
+        <p (click)="goWallet()"><span><em>{{uinfo.balance}}</em> 元</span><br>账户余额</p>
+      </div>
+      <div class="num" *ngIf="uinfo.type==1">
+        <p><em>{{uinfo.demandcount}}</em><br>发布任务数</p>
+      </div>
+      <div class="num state" *ngIf="uinfo.type==2">
+        <p>
+        <em *ngIf="uinfo.type==0 || uinfo.type == NULL || uinfo.type == ''">禁止中</em>
+        <em (click)="goAuth()" *ngIf="uinfo.status==0 && uinfo.type==2">未认证</em>
+        <em *ngIf="uinfo.status==0 && uinfo.type==1">空闲中</em>
+        <em *ngIf="uinfo.status==1">空闲中</em>
+        <em (click)="goDemanddetail()" *ngIf="uinfo.status==2">中标中</em>
+        <em (click)="goDemanddetail()" *ngIf="uinfo.status==3">执行中</em>
+        <em *ngIf="uinfo.status==4">禁止中</em><br>
+        状态
+        </p>
+      </div>
+     </div>
+     <div class="user_list_wrap">
+      <ul class="employer_list">
+          <li (click)="goUserpage()" *ngIf="uinfo.type==2">
+          <a href="#">
+            <span class="icon06">我的主页</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goInfo()">
+          <a href="#">
+            <span class="icon01">我的资料</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goTask()">
+          <a href="#">
+            <span class="icon02">我的任务</span>
+            <i></i>
+          </a>
+        </li>
+       <!--  <li (click)="goTask2()" *ngIf="uinfo.type==1">
+          <a href="#">
+            <span class="icon02">发布任务</span>
+            <i></i>
+          </a>
+        </li> -->
+        <li (click)="goCollect()">
+          <a href="#">
+            <span class="icon12">我的收藏</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goWallet()">
+          <a href="#">
+            <span class="icon03">我的钱包</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goMessage()">
+          <a href="#">
+            <span class="icon04">我的消息</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goTask1()">
+              <a href="#">
+                  <span class="icon02">积分与签到</span>
+                  <i></i>
+              </a>
+        </li>
+        <li (click)="goDown()">
+          <a href="#">
+            <span class="icon05">我的下载</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goDown1()">
+              <a href="#">
+                  <span class="icon06">我的上传</span>
+                  <i></i>
+              </a>
+        </li>
+        <li (click)="goCase()" ><!--*ngIf="uinfo.type==2"-->
+          <a href="#">
+            <span class="icon07">我的案例</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goCertify()" >
+          <a href="#">
+            <span class="icon08">实名认证</span>
+            <i></i>
+          </a>
+        </li>
+       <!--  <li (click)="goCertify3()" *ngIf="uinfo.type==2" >
+          <a href="#">
+            <span class="icon08">设计师企业实名认证</span>
+            <i></i>
+          </a>
+        </li> -->
+        <!-- <li (click)="goCertify1()" *ngIf="uinfo.validate==1 && uinfo.type==2">
+              <a href="#">
+                  <span class="icon08">设计师执业资格认证</span>
+                  <i></i>
+              </a>
+        </li>
+        <li (click)="goCertify2()" *ngIf="uinfo.validate==1 && uinfo.type==2">
+              <a href="#">
+                  <span class="icon08">设计师职称认证</span>
+                  <i></i>
+              </a>
+        </li> -->
+        <li (click)="goHelp()">
+          <a href="#">
+            <span class="icon09">帮助中心</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="goAbout()">
+          <a href="#">
+            <span class="icon10">关于我们</span>
+            <i></i>
+          </a>
+        </li>
+        <li (click)="selectViersion()">
+          <a href="#">
+            <span class="icon11">版本检测</span>
+            <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当前版本号：{{versionCode}}.0.0</em>
+           <i></i>
+          </a>
+        </li>
+      </ul>
+     </div>
+
+ </div>
+
+
+
+</ion-content>

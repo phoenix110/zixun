@@ -1,0 +1,155 @@
+
+
+
+
+<ion-content>
+    <div class="top_sear" style="position: fixed;z-index: 999;">
+      <!-- <span class="forward_icon"></span> -->
+      <div class="searbar_wrap">
+        <ion-input mode="ios" id="searbar_txt" class="searbar_txt" [(ngModel)]="keywords" type="search"  placeholder="搜索任务" [ngModelOptions]="{standalone: true}" (change)="searchDemand()" (keyup)="onSearchKeyUp($event)"></ion-input>
+        <button type="submit" class="top_searbtn" (click)="searchDemand()"></button>
+      </div>
+    </div>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="刷新...">
+      </ion-refresher-content>
+    </ion-refresher>
+    <div *ngIf="!pipei">
+    <div class="list_cont_wrap">
+      <ul class="list_tab" style="position: fixed;top: 44px;">
+        <li class="tabitem" (click)="getData(2)" [ngClass]="{'active': menu==2}"><a href="#">热门任务</a></li>
+        <li class="tabitem" (click)="getData(1)" [ngClass]="{'active': menu==1}"><a href="#">最新发布</a></li>
+        <li class="tabitem" (click)="getData(3)" [ngClass]="{'active': menu==3}"><a href="#">加急任务</a></li>
+        <li (click)="doCate()" class="select_item" [ngClass]="{'active': showCate==true}"><a href="#">筛选</a></li>
+      </ul>
+      <ul class="list" *ngIf="!showCate" style="margin-top: 44px;">
+        <li class="list_item" *ngFor="let item of list" (click)="itemClick(item)">
+            <div class="money_name">
+              <span>￥{{item.reward}}</span>
+              <p><a href="#">{{item.name}}</a></p>
+            </div>
+            <div class="types">
+              <span *ngFor="let it of item.phase">{{it.name}}</span>
+            </div>
+            <div class="states">
+              <span>竞标：<em>{{item.offercount}}</em></span>
+              <span>截止日期：<i>{{item.closedate}}</i></span>
+              <span>浏览：<i>{{item.viewcount}}</i></span>
+              <span>收藏：<i>{{item.collectcount}}</i></span>
+              <span style="color: red;margin-right:2px;" *ngIf="item.recommend == 3 && menu!=3">加急</span>
+              <span style="color: green;" *ngIf="item.status == 0">竞标中&nbsp;</span>
+              <span style="color: #004ea1;" *ngIf="item.status == 1">已选标&nbsp;</span>
+              <span style="color: #004ea1;" *ngIf="item.status > 1 && item.status < 5">执行中</span>
+              <span style="color: #004ea1;" *ngIf="item.status == 5">已完成</span>
+            </div>
+        </li>
+        <li *ngIf="list.length<1" style="text-align: center;">暂无任务~</li>
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="正在加载...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+        
+      </ul>
+        <div class="select_layer" *ngIf="showCate">            
+            <div class="select_tit">
+                <h3 class="tit">任务分类</h3>
+                <span class="more" (click)="cateOpen()" [ngClass]="{'open':doms.cateOpen == true}">全部</span>
+            </div>
+            <div class="task_type" *ngIf="!doms.cateOpen">
+                <span [ngClass]="{'active':cate==0 }" (click)="cateClick(0)"><i></i>全部</span>
+                <span *ngFor="let c of catelist" [ngClass]="{'active':c.id == cate }" (click)="cateClick(c)"><i></i>{{c.name}}</span>
+            </div>
+            <div class="select_tit" *ngIf="catelistson.length > 0">
+                <h3 class="tit">子分类</h3>
+                <span class="more" (click)="catesonOpen()" [ngClass]="{'open':doms.catesonOpen == true}">全部</span>
+            </div>
+            <div class="task_subtype" *ngIf="catelistson.length > 0 && !doms.catesonOpen">>
+                <span [ngClass]="{'active':cateson==0 }" (click)="cateClick(0,1)"><i></i>全部</span>
+                <span *ngFor="let child of catelistson" [ngClass]="{'active':child.id == cateson }" (click)="cateClick(child,1)">{{child.name}}</span>
+            </div>
+            <div class="select_tit">
+                <h3 class="tit">设计阶段</h3>
+                <span class="more" (click)="designphaseOpen()" [ngClass]="{'open':doms.designphase == true}">全部</span>
+            </div>
+            <div class="design_step" *ngIf="designphaselist.length > 0 && !doms.designphase">
+                <span [ngClass]="{'active':params.design==0 }" (click)="allClick(0,'designphase')"><i></i>全部</span>
+                <span [ngClass]="{'active':it.id == params.design }" (click)="allClick(it.id,'designphase')" *ngFor="let it of designphaselist">{{it.name}}</span>
+            </div>
+            <div class="design_substep" *ngIf="servicelevellist.length > 0 && !doms.designphase">
+                <span [ngClass]="{'active':it.id == params.designchild }" (click)="allClick(it.id,'service')" *ngFor="let it of servicelevellist">{{it.name}}</span>
+            </div>
+             <div class="select_tit">
+                <h3 class="tit">任务状态</h3>
+                <span class="more" (click)="statusOpen()" [ngClass]="{'open':doms.status == true}">全部</span>
+             </div>
+             <div class="task_state" *ngIf="!doms.status">
+                <span [ngClass]="{'active':-1 == params.status }" (click)="allClick(-1,'status')">全部</span>
+                <span [ngClass]="{'active':0 == params.status }" (click)="allClick(0,'status')">竞标中</span>
+                <span [ngClass]="{'active':2 == params.status }" (click)="allClick(2,'status')">执行中</span>
+                <span [ngClass]="{'active':5 == params.status }" (click)="allClick(5,'status')">已完成</span>
+             </div>
+             <div class="select_tit">
+                <h3 class="tit">任务金额</h3>
+                <span class="more" (click)="amountOpen()" [ngClass]="{'open':doms.amount == true}">全部</span>
+            </div>
+            <div class="task_money" *ngIf="!doms.amount">
+                <span [ngClass]="{'active':-1 == params.amount }" (click)="allClick(-1,'amount')">全部</span>
+                <span [ngClass]="{'active':0 == params.amount }" (click)="allClick(0,'amount')">0.1万~10万</span>
+                <span [ngClass]="{'active':1 == params.amount }" (click)="allClick(1,'amount')">10万~20万</span>
+             </div>
+             <div class="select_ope">
+                <button class="concel active" (click)="cancelCate()">取消</button>
+                <button class="confirm" (click)="confirmCate()">确定</button>
+             </div>
+        </div>
+        
+    </div>
+    
+
+     </div>
+     <ion-fab right bottom *ngIf="!pipei && !showCate">
+
+        <div class="pagination"><p>{{nowpage}} / {{totalpage}}</p></div>
+
+       <button style="margin-bottom: 10px;" ion-fab (click)="tj()">推荐</button>
+       <button ion-fab (click)="kf()" style="background-color: #14a838;">客服</button>
+      </ion-fab>
+    <div *ngIf="pipei">
+        <div class="recommend_wrap">
+      <h5 class="tit">没有找到合适任务？</h5>
+      <p class="intro">报上你们团队的优势，我们帮你匹配任务</p>
+      <form [formGroup]="pipeiForm" (ngSubmit)="addPipei(pipeiForm.value)">
+      <ul class="recommend_list">
+        <li>
+          <input type="text" formControlName="person" [(ngModel)]="pipeiData.person" class="person" placeholder="联系人" required="">
+        </li>
+        <li>
+          <input type="phone" formControlName="phone" class="phone" [(ngModel)]="pipeiData.phone" placeholder="联系电话" required="">
+        </li>
+        <li>
+          <input type="text" formControlName="captche" [(ngModel)]="pipeiData.captche" class="yzm" placeholder="验证码" required>
+          <button type="button" (click)="getCode()" class="getyzm_btn">{{ codeHtml }}</button>
+        </li>
+        <li>
+          <textarea (blur)="blurInput($event)" placeholder="团队优势" formControlName="intro" [(ngModel)]="pipeiData.intro" class="goodness">{{pipeiData.intro}}</textarea>
+          <p class="goodness_notice">简要描述，限<em>{{pipeiIntroLen}}</em>字内</p>
+        </li>
+        <li>
+          <div class="recommend_info">今天还剩<em>{{pipeiCount}}</em>个上传名额</div>
+        </li>
+      </ul>
+      </form>
+    </div>
+    <div class="recommend_ope">
+      <button (click)="cancelPipei()" class="concel">取消</button>
+      <button type="submit" (click)="addPipei(pipeiForm.value)" class="confirm" [disabled]="!pipeiForm.valid||submitted">立即上传</button>
+    </div>
+    </div>
+</ion-content>

@@ -1,0 +1,299 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="dismiss()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 任务详情 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+  <div class="content_wrap" *ngIf="!step">
+        <div class="dt_name_state">
+          <div class="name_state">
+                 <div class="name">
+                     <h3>{{info.name}}</h3>
+                     <p>￥{{info.reward}}<i *ngIf="userinfo != undefined && userinfo.id != '' && allinfo.isoffer && allinfo.isoffer.uid == userinfo.id && info.status>1">已支付</i></p>
+                 </div>
+                 <div class="state">
+                     <a href="#" *ngIf="info.status==0">竞标中</a>
+                     <a href="#" *ngIf="info.status==1">已选标</a>
+                     <a href="#" *ngIf="info.status==2">执行中</a>
+                     <a href="#" *ngIf="info.status==3">执行中</a>
+                     <a href="#" *ngIf="info.status==4">执行中</a>
+                     <a href="#" *ngIf="info.status==5">已完成</a>
+                 </div>  
+            </div>
+            <div class="connect_state">
+                <span>发布日期：<i>{{info.addtime}}</i></span>
+                <span>竞标：<em>{{info.offercount}}</em></span>
+                <span>浏览：<i>{{info.viewcount}}</i></span>
+                <span>收藏：<i>{{info.collectcount}}</i></span>
+            </div>
+        </div>
+        <div class="request_box">
+            <h5 class="tit">需求详情</h5>
+            <p>竞标截止日期：{{ info.closedate }}<span *ngIf="info.closeday!='0天'">（剩余 <b>{{info.closeday}} </b>）</span></p>
+            <p>任务完工日期：{{ info.finishdate }}</p>
+            <p>任务分类：{{ info.catename }}</p>
+        </div>
+        <div class="intro_box">
+            <h5 class="tit">任务描述</h5>
+            <p>{{info.detail}}</p>
+        </div>
+        <div class="design_box">
+            <h5 class="tit">设计阶段</h5>
+            <ul class="design_list">
+                <li *ngFor="let s of info.designphaseList">
+                    <span>{{s.name}}</span>
+                    <div *ngIf="s.serviceList.length>0">
+                        <span *ngFor="let ss of s.serviceList">{{ss.name}}</span>
+                    </div>
+                </li>
+               
+            </ul>
+        </div>
+        <div class="file_box" *ngIf="info.attachment">
+            <h5 class="tit">附件</h5>
+            <ul class="file_list">
+                <li *ngFor="let f of info.attachment">{{f.name}}</li>
+            </ul>
+            <div class="down_wrap">
+                <button (click)="downfile()" type="button">下载附件</button>
+            </div>
+        </div>
+        <div class="bail_box" *ngIf="allinfo.isoffer && userinfo && userinfo.id && userinfo.id == allinfo.isoffer.uid">
+            <h5 class="tit">保证金</h5>
+            <div class="bail_money">
+              <span>￥ {{info.bond}}</span>
+              <i *ngIf="info.status<=1">未支付</i>
+              <i *ngIf="info.status==2">已支付</i>
+            </div>
+            <p class="notice">请于中标后3日内支付保证金，否则将取消您的中标资格。保证金将在任务结束后全额退还。</p>
+        </div>
+        <div class="achieve_box" *ngIf="info.status > 1 && allinfo.isoffer && allinfo.isoffer.id && userinfo && userinfo.id == allinfo.isoffer.uid">
+            <h5 class="tit">成果提交</h5>
+            <table cellpadding="0" cellspacing="0" class="achieve_list">
+              <colgroup>
+                <col class="col01">
+                <col class="col02">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>序号</th>
+                  <th>成果描述</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let w of allinfo.works;let i = index;">
+                  <td>{{i+1}}</td>
+                  <td>
+                    <p class="intro">
+                      <span>{{w.detail}}</span>
+                      <em class="showmore_btn">更多>></em>
+                    </p>
+                    <div class="states">
+                      <div>
+                        <p>验收形式：<em>{{w.tyoe}}</em></p>
+                        <p>截止日期：<em>{{w.finishdate}}</em></p>
+                      </div>
+                      <div>
+                        <p>状态</p>
+                        <p>
+                        <em *ngIf="w.status == 0">未提交</em>
+                        <em *ngIf="w.status == 1">待校验</em>
+                        <em *ngIf="w.status == 2">已通过</em>
+                        <em *ngIf="w.status == 3">未通过</em>
+                        <em *ngIf="w.status == 4">延期申请中</em>
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="2">
+                    <p>完工截止日期：{{info.finishdate}}</p>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="task_notice">
+              <p><em>提示：</em>请仔细阅读 验收条件知情书，如果您支付了保证金，则视为您已充分阅读、理解并同意验收条件知情书里的所有内容。<br>
+若设计师提交的成果3次未通过验收，则会失去任务实施资格，并将收到系统惩罚，惩罚如下：</p>
+              <p>
+                1. 扣减评分<br>
+                2. 15天内禁止接单<br>
+                3. 扣除保证金
+              </p>
+            </div>
+        </div>
+        
+
+
+        <div class="bid_box" *ngIf="info.status==0">
+            <h5 class="tit">竞标者（{{offerList.length}}）</h5>
+            <ul class="bider_list">
+                <li *ngFor="let o of offerList">
+                    <div class="item_cont">
+                        <div class="pic">
+                            <a href="#">
+                                <img src="{{o.avatar}}" alt="{{o.username}}" title="{{o.username}}">
+                            </a>
+                        </div>
+                        <div class="infos">
+                            <h5>
+                              <a href="#">{{o.username}}</a>
+                            </h5>
+                            <p>项目经验：<b>{{o.experiencecount}}</b></p>
+                            <div class="commends">
+                                <span class="label">用户评价</span>
+                                <div class="starts">
+                                <i [ngClass]="{'on':o.comment > 0}"></i>
+                                <i [ngClass]="{'on':o.comment > 1}"></i>
+                                <i [ngClass]="{'on':o.comment > 2}"></i>
+                                <i [ngClass]="{'on':o.comment > 3}"></i>
+                                <i [ngClass]="{'on':o.comment > 4}"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bid_icon">
+                            <span *ngIf="o.status == 1"></span>
+                        </div>
+                    </div>
+                    <div class="skills_wrap">
+                        <span>擅长领域</span>
+                        <div>
+                            <span *ngFor="let s of o.skill">{{s}}</span>
+                        </div>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="connect_box" *ngIf="xslist.length>0 && info.status==0">
+           <h5 class="tit">相似任务</h5>
+           <ul class="connect_list">
+               <li *ngFor="let it of xslist">
+                   <p>
+                       <a href="#">{{it.name}}</a>
+                   </p>
+                   <div>
+                       <span>￥{{it.reward}}</span>
+                       <span>竞标{{it.offercount}}人  |  {{it.addtime}}</span>
+                   </div>
+               </li>
+               
+           </ul>
+        </div>
+        <div class="detail_ope" *ngIf="info.status == 1 && allinfo.isoffer && allinfo.isoffer.id && userinfo != undefined && userinfo.id != ''  && userinfo.id == allinfo.isoffer.uid">
+            <span class="extra_time02">剩余支付时间：&nbsp;{{allinfo.offertime}}</span>
+            <span class="ope_pay" (click)="payBond()">支付保证金</span>
+        </div>
+        <div class="detail_ope" *ngIf="info.status>=2 && allinfo.isoffer && allinfo.isoffer.id && userinfo && userinfo.id == allinfo.isoffer.uid">
+            <span class="extra_time">剩余支付时间：0</span>
+            <button class="ope_payed">已支付保证金</button>
+        </div>
+
+        <div class="detail_ope" *ngIf="info.status<1">
+            <button type="button" (click)="collect()" class="collect_btn" [ngClass]="{'active':iscollect}">收藏</button>
+            <button type="button" (click)="dooffer()" class="bid_btn">我要竞标</button>
+        </div>
+        <div class="btm_fixmenu" style="width:100%;height: 4.2rem; background: #f00; position: fixed; left:0;bottom: 0; z-index: 180;">
+            
+        </div>
+        <div class="seeflow_btn" (click)="viewStep()">查看<br>流程</div>
+     
+  </div> 
+
+  <div class="content_wrap white" *ngIf="step">
+        <div class="detail_top">
+          <span class="forward_icon"></span>
+          <p class="detail_psotion">任务流程</p>
+        </div>
+        <h5 class="flow_tit">任务流程</h5>
+        <ul class="flow_list">
+          <li class="step01">
+            <span></span>
+            <p>1.参与竞标</p>
+          </li>
+          <li class="step02">
+            <span></span>
+            <p>2.中标</p>
+          </li>
+          <li class="step03">
+            <span></span>
+            <p>3.支付保证金</p>
+          </li>
+          <li class="step04">
+            <span></span>
+            <p>6.任务结束</p>
+          </li>
+          <li class="step05">
+            <span></span>
+            <p>5.获得报酬</p>
+          </li>
+          <li class="step06">
+            <span></span>
+            <p>4.完成任务</p>
+          </li>
+        </ul>
+        <div class="flow_ope"><button (click)="viewStep()" type="button">知道了</button></div>
+        <div class="btm_fixmenu" style="width:100%;height: 4.2rem; background: #f00; position: fixed; left:0;bottom: 0; z-index: 180;">
+        </div>
+  </div> 
+
+
+
+
+<!-- 弹层 -->
+<div class="common_mask" *ngIf="box1">
+    <div class="common_box">
+        <div class="common_tit">
+            <h3>我要竞标</h3>
+            <a href="javascript:;" (click)="canceloffer()" class="close_btn"></a>
+        </div>
+        <div class="common_cont_wrap">
+            <p class="bid_intro">
+                参与竞标后，不可撤回，您确认要参与此任务的竞标？
+            </p>
+            <div class="bid_ope">
+               <button type="button" (click)="canceloffer()" class="concel active">取消</button>
+               <button type="button" (click)="saveoffer()" class="confirm">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="common_mask" *ngIf="box2">
+    <div class="common_box">
+        <div class="common_tit">
+            <h3>提示</h3>
+            <a href="javascript:;" class="close_btn" (click)="canceloffer()"></a>
+        </div>
+        <div class="common_cont_wrap">
+            <span class="fail_icon"></span>
+            <!-- <span class="sucess_icon"></span> -->
+           <!--  <p class="notice_intro">
+               任务收藏成功！
+           </p> -->
+           <p class="notice_intro">{{dooffermsg}}</p>
+           <!--  <p class="notice_intro">
+              竞标成功！请您关注任务状态，
+           选择中标者后，系统会通知每一位竞标者！
+           </p> -->
+        </div>
+    </div>
+</div>
+
+
+</ion-content>

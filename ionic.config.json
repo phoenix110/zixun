@@ -1,0 +1,18 @@
+{
+  "name": "ionic2_ykm",
+  "app_id": "319186f2",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://www.renrenyoukong.com/api"
+    },
+    {
+      "path": "/file",
+      "proxyUrl": "http://www.renrenyoukong.com/file"
+    }
+  ]
+}

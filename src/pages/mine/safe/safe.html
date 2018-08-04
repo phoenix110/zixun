@@ -1,0 +1,93 @@
+
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 我的资料 </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+<div class="ucontent_wrap">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">账号安全</p>
+     </div>
+     <div class="safe_area">
+      <h5 class="tit">安全绑定</h5>
+        <ul class="safe_list">
+            <li class="binded">
+                <div class="phone">手机</div>
+                <p>{{uinfo.telphone}}</p>
+            </li>
+            <li class="nobind">
+                <div class="email">邮箱</div>
+                <p *ngIf="!uinfo.email" (click)="bindmail()">未绑定</p>
+                <p *ngIf="uinfo.email">{{uinfo.email}}</p>
+            </li>
+        </ul>
+     </div>
+     <div class="safe_area">
+        <h5 class="tit">第三方账号绑定</h5>
+        <ul class="safe_list">
+            <li [ngClass]="{'binded':uinfo.qq,'nobind':!uinfo.qq}">
+                <div class="qq">QQ</div>
+                <p *ngIf="!uinfo.qq">未绑定</p>
+                <p *ngIf="uinfo.qq">已绑定</p>
+            </li>
+            <li [ngClass]="{'binded':uinfo.wx,'nobind':!uinfo.wx}">
+                <div class="weixin">微信</div>
+                <p *ngIf="uinfo.wx">已绑定</p>
+                <p *ngIf="!uinfo.wx">未绑定</p>
+            </li>
+            <li [ngClass]="{'binded':uinfo.sina,'nobind':!uinfo.sina}">
+                <div class="sina">微博</div>
+                <p *ngIf="!uinfo.sina">未绑定</p>
+                <p *ngIf="uinfo.sina">已绑定</p>
+            </li>
+        </ul>
+     </div>
+     <div class="safe_area">
+        <h5 class="tit">密码设置</h5>
+        <ul class="safe_list">
+            <li>
+                <div>登陆密码</div>
+                <p (click)="presentProfileModal(9,'')">修改</p>
+            </li>
+            <li>
+                <div>支付密码</div>
+                <p *ngIf="!uinfo.haspaypwd" (click)="presentProfileModal(10,'')">未设置</p>
+                <p *ngIf="uinfo.haspaypwd" (click)="presentProfileModal(10,'')">修改</p>
+            </li>
+        </ul>
+     </div>
+     <div class="safe_ope">
+        <button (click)="doOut()" type="button">退出登陆</button>
+     </div>  
+  </div>
+<!-- 弹层 -->
+<div class="common_mask">
+    <div class="common_box">
+        <div class="common_tit">
+            <h3>解除绑定</h3>
+            <a href="javascript:;" class="close_btn"></a>
+        </div>
+        <div class="common_cont_wrap">
+            <p class="notice_intro pt25">
+                确定要解除账号与QQ的关联吗？
+            </p>
+            <div class="bid_ope">
+               <button type="button" class="concel active">取消</button>
+               <button type="button" class="confirm">解除绑定</button>
+            </div>
+        </div>
+    </div>
+</div>  
+</ion-content>

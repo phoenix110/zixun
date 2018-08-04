@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\support-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-compat-26.0.0-alpha1_75878a629532f3b4ad069d52bdc678225988c735.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-v4-26.0.0-alpha1_01c07bc7dd4107a319661cd16e491a227bd678c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.tencent.mm.opensdk\wechat-sdk-android-with-mta\5.1.4\a2166720f73c470341d9cf4b57edd3bbd42f8f8c\wechat-sdk-android-with-mta-5.1.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a2166720f73c470341d9cf4b57edd3bbd42f8f8c">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\wechat-sdk-android-with-mta-5.1.4_86f5cb38f7dc1689218aa31e4886aa6e202f45b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\libs\jcore-android-1.1.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e38434d177c7e2ad13524529f2a0874cad828323">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\jcore-android-1.1.7_63463187b699a230630667892e2e510db2f0dab1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\5.0.4\da08b8cce7bbf903602a25a3a163ae252435795\asm-5.0.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0da08b8cce7bbf903602a25a3a163ae252435795">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\asm-5.0.4_bb140721cef7108aea907cc3578d53474d95ba92.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.stephenc.jcip\jcip-annotations\1.0-1\ef31541dd28ae2cefdd17c7ebf352d93e9058c63\jcip-annotations-1.0-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ef31541dd28ae2cefdd17c7ebf352d93e9058c63">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\jcip-annotations-1.0-1_eb76643663db397828a08e5275f1a103fde836d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nimbusds\nimbus-jose-jwt\5.1\98dfb9ee74d290afce026a262c6297138a0c8ec4\nimbus-jose-jwt-5.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="98dfb9ee74d290afce026a262c6297138a0c8ec4">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\nimbus-jose-jwt-5.1_0a0d75392ac766d68a8e8d80ce333233963cd623.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\support-media-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-26.0.0-alpha1_1e9562f2b37e5be8943c7d71e78092a9031b86bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-26.0.0-alpha1_7ad0a61b5af6f62d2aa28536c2e62d7987355605.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5e29e17feb5c194b0eee3cc76938b82472faee51">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_f4ba7038c94a94328be8137bea9d37efeb183a98.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\libs\alipaySdk-20161129.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9356473ed942faa70a18f34883af52681e1c7223">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\alipaySdk-20161129_0480fae474b903b26ae336813ec34373031648db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-utils\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-26.0.0-alpha1_46652d4dd61c53ac0b225baf6d96a48e6e38da4b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\appcompat-v7\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-26.0.0-alpha1_0b5b4c0deb6a5b149dbc1693008b44bba32df76a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\net.minidev\json-smart\2.3\7396407491352ce4fa30de92efb158adb76b5b\json-smart-2.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="007396407491352ce4fa30de92efb158adb76b5b">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\json-smart-2.3_0233bbebc146ff2b220b0aa8a68ceec67757c05d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\androidsdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_2f8e81490599c66fd1760533e89d3d44b74cbac1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\support-core-ui\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-26.0.0-alpha1_bb57869575fd7af8acf14eab77620470609ad57a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\net.minidev\accessors-smart\1.2\c592b500269bfde36096641b01238a8350f8aa31\accessors-smart-1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c592b500269bfde36096641b01238a8350f8aa31">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\accessors-smart-1.2_e5c164f1716e2fc8876d63bd35c2a442d00d0ea0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\libs\jpush-android-3.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c74a7c1d1e250f985ee21309e43b7e800fd2e2f3">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\jpush-android-3.1.0_b2932ba6f78821802e6b4b637ad859d57785358a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\openDefault-4.1.5\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="307d6d8c15b917345ed2f4d41fcb941152349c42">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\intermediates-exploded-aar-openDefault-4.1.5_ab5b4757d1ab89b1b150bea1f49122c848861f47.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\libs\mta-sdk-1.6.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c184c69f43b1fe46390f7123717c65bd844bccb6">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\mta-sdk-1.6.2_6dcb3289aee633a72720eef70a096cae751c89c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-26.0.0-alpha1_422a914b766fa50c754154d9d6127f3adf406a7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\exploded-aar\com.android.support\support-fragment\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-26.0.0-alpha1_6a5f321c51424cc75ee49fc84c745b5ea53110ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="F:\ionicWorkSpace\ionic2_ykm\platforms\android\libs\open_sdk_r5793.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="54bf962bc0730052daa0a92b1c2599c147be3f88">
+        <dex dex="F:\ionicWorkSpace\ionic2_ykm\platforms\android\build\intermediates\pre-dexed\debug\open_sdk_r5793_369fdc09077a2c86c0dfb30f26823df0e852fe5e.jar" />
+    </item>
+
+</items>

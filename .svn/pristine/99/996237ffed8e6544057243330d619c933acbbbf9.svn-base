@@ -1,0 +1,96 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 任务详情 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+   
+   <div class="ucontent_wrap">
+     
+     <div class="detail_common name_box">
+        <h2 class="name">{{info.name}}</h2>
+        <p>发布日期：<i>{{info.addtime}}</i></p>
+     </div>
+     <div class="detail_common accept_box">
+         <h3 class="tit">验收项目</h3>
+         <p>未验收，请到网站上下载并验收任务</p>
+     </div>
+     <!-- 报价阶段一 -->
+     <div class="detail_common offer_price_box" *ngIf="info.status==1">
+         <h3 class="tit">平台报价</h3>
+         <p>￥{{info.reward}}</p>
+         <p>根据项目难度和项目内容，我们依据当前的市场情况估算了该项目的成本，给出50万的报价。此报价除了包括完成项目的既定目标外，还提供10天的设备运行指导工作。</p>
+         <p>如果您对平台的报价有疑问，可以联系客服 <em>027-56869638</em></p>
+         <div class="ope">
+             <a href="#" (click)="pay()" class="pay_link">立即支付</a>
+             <button (click)="down(1)" type="button" class="down_link">下载合同</button>
+             <button (click)="cancel()" type="button" class="concel_link">取消任务</button>
+         </div>
+     </div>
+     <!-- 报价阶段二 -->
+    <div class="detail_common offer_price_box" *ngIf="info.status==0">
+        <h3 class="tit">平台报价</h3>
+        <p>￥?</p>
+        <p>报价中...</p>
+        <p>
+          平台将在任务发布后的24小时内给出报价，如项目紧急，可以联系客服 
+          <em>027-56869638</em>
+        </p>
+    </div> 
+    <!-- 报价阶段三 -->
+    <div class="detail_common offer_price_box" *ngIf="info.status>=2">
+         <h3 class="tit">平台报价</h3>
+         <p>￥{{info.reward}}</p>
+         <div class="ope">
+            <button type="button" class="payed_btn">已支付</button>
+         </div>
+    </div>
+    <div class="detail_common request_box">
+         <h3 class="tit">需求描述</h3>
+         <p>{{info.detail}}</p>
+     </div>
+     <div class="detail_common adrtime_box">
+        <h3 class="tit">项目地址及工期</h3>
+        <p>地址：{{info.city}}{{info.address}}</p>
+        <p>开始时间：{{info.addtime}}</p>
+        <p>结束时间：{{info.finishdate}}</p>
+     </div>
+     <div class="detail_common design_box">
+         <h3 class="tit">项目地址及工期</h3>
+         <ul class="design_list">
+                <li *ngFor="let s of info.designphaseList">
+                    <span>{{s.name}}</span>
+                    <div *ngIf="s.serviceList.length>0">
+                        <span *ngFor="let ss of s.serviceList">{{ss.name}}</span>
+                    </div>
+                </li>
+            </ul>
+     </div>
+     <div class="detail_common ufile_box" *ngIf="info.attachment">
+        <h3 class="tit">附件</h3>
+        <ul class="file_list">
+                <li *ngFor="let f of info.attachment">{{f.name}}</li>
+        </ul>
+        <div class="down_wrap">
+                <button (click)="down(2)" type="button">下载附件</button>
+        </div>
+     </div>
+     <div class="detail_common uconnect_box">
+        <h3 class="tit">联系方式</h3>
+        <p>电话号码：{{info.telphone}}</p>
+        <p *ngIf="info.qq">QQ：{{info.qq}}</p>
+        <p *ngIf="info.wx">微信号：{{info.wx}}</p>
+     </div>
+  </div>
+  <div class="seeflow_btn">查看<br>流程</div>
+
+</ion-content>

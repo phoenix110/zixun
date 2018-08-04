@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi\\screen.png",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\res\\drawable-port-xhdpi\\screen.png"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi\\screen.png",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\res\\drawable-port-xhdpi\\screen.png"
+    }
+]

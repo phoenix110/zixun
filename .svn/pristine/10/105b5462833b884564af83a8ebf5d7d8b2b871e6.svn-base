@@ -1,0 +1,89 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 我的上传 </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+   
+   <div class="ucontent_wrap">
+     
+     <div id="box">
+            <!--<span [ngClass]="{'active':catemenu==0}" (click)="setCate(0)">全部</span>
+            <span [ngClass]="{'active':it.id==catemenu}" (click)="setCate(it.id)" *ngFor="let it of cate">{{it.name}}</span>-->
+         <div class="left">
+             <span class="nowF nowg">我的上传：</span>
+         </div>
+     </div>
+     <div class="upMsg">
+          <ul class="msgUL">
+              <li>
+                  <div class="title_s left">
+                      <span>资料名称:</span>
+                  </div>
+                  <div class="input_s right">
+                      <input type="text" id="title_text" placeholder="如：2017年武汉市饮水检测报告"/>
+                  </div>
+              </li>
+              <li>
+                  <div class="title_s left">
+                      <span>资料描述:</span>
+                  </div>
+                  <div class="input_s right">
+                      <textarea name="msg" id="title_text_s1" cols="30" rows="5"></textarea>
+                  </div>
+              </li>
+              <li id="li_select" style="clear: both;">
+                  <div class="title_s left">
+                      <span>资料分类:</span>
+                  </div>
+                  <div class="input_s right">
+                      <select name="select_s1" id="select_s">
+                          <option value="1">资料一</option>
+                          <option value="2">资料二</option>
+                          <option value="3">资料三</option>
+                      </select>
+                  </div>
+              </li>
+              <li id="button_tyle">
+                  <div class="title_s left">
+                      <span>资料描述:</span>
+                  </div>
+                  <div class="input_s right">
+                      <button class="btn-s" (click)="upIdcardThumb(1)">+上传</button>
+                      <br/>
+                      <span>支持上传小于10M的.zip,.rar文件，仅限上传单个文件夹</span>
+                  </div>
+              </li>
+              <li class="submit_s">
+                  <div class="title_s left">
+                      <span></span>
+                  </div>
+                  <div class="input_s right">
+                      <button class="btn-s" (click)="submits1()">确认上传</button>
+                  </div>
+              </li>
+          </ul>
+     </div>
+     <ul class="mydown_list">
+        <li (click)="info(item)" *ngFor="let item of list">
+            <h5>{{item.title}}</h5>
+            <div>
+                <span>浏览：<em>{{item.views}}</em></span>
+                <span>下载：<em>{{item.downloads}}</em></span>
+                <span>日期：<em>{{item.time}}</em></span>
+            </div>
+        </li>
+        <li *ngIf="list.length==0">无下载内容~</li>
+     </ul> 
+ </div>     
+
+</ion-content>

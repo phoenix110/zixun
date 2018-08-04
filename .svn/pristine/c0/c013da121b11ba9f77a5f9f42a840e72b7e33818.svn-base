@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\opener_paths.xml",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\res\\xml\\opener_paths.xml"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\opener_paths.xml",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\res\\xml\\opener_paths.xml"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\config.xml",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\app_install_paths.xml",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\res\\xml\\app_install_paths.xml"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\app_install_paths.xml",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\res\\xml\\app_install_paths.xml"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\res\\xml\\provider_paths.xml"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\config.xml",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\res\\xml\\provider_paths.xml"
+    }
+]

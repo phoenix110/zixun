@@ -1,0 +1,52 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 我的任务 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+   
+   <div class="ucontent_wrap">
+     
+     <div class="employer_mytask_tab">
+            <span *ngIf="type==1" [ngClass]="{'active':status==0}" (click)="setStatus(0)">报价中<em>({{pricecount}})</em></span>
+            <span [ngClass]="{'active':status==4}" (click)="setStatus(4)">未支付<em>({{nopaycount}})</em></span>
+            
+
+            <span [ngClass]="{'active':status==1}" (click)="setStatus(1)">未验收<em>({{nocheckcount}})</em></span>
+            <span [ngClass]="{'active':status==2}" (click)="setStatus(2)">已完成<em>({{overcount}})</em></span>
+     </div>
+     <ul class="employer_mytask_list">
+          <li *ngFor="let item of demand" (click)="info(item)">
+              <div class="money_price">
+                  <span *ngIf="type==2">￥{{item.reward}}</span>
+                  <span *ngIf="type==1 && item.status ==0">待报价</span>
+                  <span *ngIf="type==1 && item.status > 0">￥{{item.reward}}</span>
+                  <p>
+                      <a href="#">{{item.name}}</a>
+                  </p>
+              </div>
+              <div class="type">
+                  <span *ngFor="let s of item.service">{{s}}</span>
+              </div>
+              <div class="state">
+                  <span *ngIf="type==2">竞标：<em>{{item.offercount}}</em></span>
+                  <span *ngIf="type==2">截止日期：<i>{{item.closedate}}</i></span>
+                  <span>完工日期：<i>{{item.finishdate}}</i></span>
+                  <span *ngIf="type==1 && status==1">状态：<i *ngIf="item.status==2">执行中</i><i *ngIf="item.status==3">待验收</i></span>
+              </div>
+          </li>
+          <li *ngIf="demand.length<1">暂无信息~</li>
+                
+    </ul>
+  </div>    
+
+</ion-content>

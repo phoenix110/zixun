@@ -1,0 +1,173 @@
+
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons left (click)="back()">
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button>
+    </ion-buttons>
+
+    <ion-title mode="ios"> 发布任务 </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+ <div class="help_wrap clearfloat">
+   <ul class="box_ul clearfloat">
+     <li class="li_one clearfloat">
+       <div class="left left_title">
+         <span class="text">项目名称: </span>
+       </div>
+       <div class="left input_text">
+         <input type="text" name="title_text" id="title" placeholder="请输入您的项目名称"/>
+       </div>
+     </li>
+     <li class="li_one clearfloat">
+       <div class="left left_title">
+         <span class="text">项目分类: </span>
+       </div>
+       <div class="left input_text">
+         <select name="title_classify" id="classify">
+           <option value="0">水污染防治工程</option>
+           <option value="1">物理污染防治工程</option>
+           <option value="2">大气染防治工程</option>
+           <option value="3">污染修复工程</option>
+           <option value="4">固体废物处理处置工程</option>
+         </select>
+       </div>
+     </li>
+     <li class="li_one clearfloat">
+       <div class="left left_title">
+         <span class="text">设计阶段: </span>
+       </div>
+       <ul class="left input_text clearfloat ul_allClassify">
+           <li class="checked_classify clearfloat">
+             <div class="classify_titles">环境影响评价</div>
+             <div class="checked_all">
+               <b class="title_small">服务程度</b>
+               <input type="checkbox" name="checkbox_s1"/>现场技术服务
+               <input type="checkbox" name="checkbox_s1"/>编制报告
+               <input type="checkbox" name="checkbox_s1"/>专家评审汇报
+             </div>
+           </li>
+           <li class="checked_classify clearfloat">
+             <div class="classify_titles">清洁生产审核</div>
+             <div class="checked_all">
+               <b class="title_small">服务程度</b>
+               <input type="checkbox" name="checkbox_s1"/>现场技术服务
+               <input type="checkbox" name="checkbox_s1"/>编制报告
+               <input type="checkbox" name="checkbox_s1"/>专家评审汇报
+             </div>
+           </li>
+           <li class="checked_classify clearfloat">
+             <div class="classify_titles">项目建议书</div>
+             <div class="checked_all">
+               <b class="title_small">服务程度</b>
+               <input type="checkbox" name="checkbox_s1"/>现场技术服务
+               <input type="checkbox" name="checkbox_s1"/>编制报告
+               <input type="checkbox" name="checkbox_s1"/>编制图纸
+             </div>
+           </li>
+           <li class="checked_classify clearfloat">
+             <div class="classify_titles">可行性研究</div>
+             <div class="checked_all">
+               <b class="title_small">服务程度</b>
+               <input type="checkbox" name="checkbox_s1"/>现场技术服务
+               <input type="checkbox" name="checkbox_s1"/>编制报告
+               <input type="checkbox" name="checkbox_s1"/>编制图纸
+               <input type="checkbox" name="checkbox_s1"/>专家评审汇报
+             </div>
+           </li>
+           <li class="checked_classify clearfloat">
+             <div class="classify_titles">初步设计</div>
+             <div class="checked_all">
+               <b class="title_small">服务程度</b>
+               <input type="checkbox" name="checkbox_s1"/>现场技术服务
+               <input type="checkbox" name="checkbox_s1"/>编制报告
+               <input type="checkbox" name="checkbox_s1"/>编制图纸
+               <input type="checkbox" name="checkbox_s1"/>专家评审汇报
+             </div>
+           </li>
+           <li class="checked_classify clearfloat">
+             <div class="classify_titles">施工图设计</div>
+             <div class="checked_all">
+               <b class="title_small">服务程度</b>
+               <input type="checkbox" name="checkbox_s1"/>现场技术服务
+               <input type="checkbox" name="checkbox_s1"/>编制报告
+               <input type="checkbox" name="checkbox_s1"/>编制图纸
+               <input type="checkbox" name="checkbox_s1"/>专家评审汇报
+               <input type="checkbox" name="checkbox_s1"/>现场技术交底
+               <input type="checkbox" name="checkbox_s1"/>调试运行
+               <input type="checkbox" name="checkbox_s1"/>施工技术验收
+             </div>
+           </li>
+       </ul>
+     </li>
+     <li class="li_one clearfloat">
+       <div class="left left_title">
+         <span class="text">工厂地址: </span>
+       </div>
+       <div class="left input_text">
+         <textarea name="title_address" id="address" cols="41" rows="5" placeholder="请输入您的工厂地址详细信息"></textarea>
+       </div>
+     </li>
+     <li class="li_one clearfloat">
+       <div class="left left_title">
+         <span class="text">项目描述: </span>
+       </div>
+       <div class="left input_text">
+         <textarea name="title_msg" id="msg_s" cols="41" rows="8" placeholder="请简洁的描述您的项目信息,请从项目目的，项目预期效果，交付成果特征，验收标准，需要开展的工作等方面进行描述。"></textarea>
+       </div>
+       </li>
+       <li class="li_one clearfloat">
+         <div class="left left_title">
+           <span class="text">项目上传: </span>
+         </div>
+         <div class="left input_text">
+           <button name="title_uploadImg" id="uploadImg" class="btn-s" (click)="upIdcardThumb(1)">项目上传</button>
+           <br/>
+           <span class="text">请以图片的方式上传项目信息，支持png,jpg,jpeg等格式</span>
+         </div>
+       </li>
+       <li class="li_one clearfloat">
+         <div class="left left_title">
+           <span class="text">完成工期: </span>
+         </div>
+         <div class="left input_text">
+           <input type="date" name="dateOver" id="dateOver"/>
+         </div>
+       </li>
+       <li class="li_one clearfloat">
+         <div class="left left_title">
+           <span class="text">联系方式: </span>
+         </div>
+         <div class="left input_text">
+           <input type="number" name="dateTel" id="dateTel" placeholder="请输入您的联系方式"/>
+         </div>
+       </li>
+       <li class="li_one clearfloat">
+         <div class="left left_title">
+           <span class="text">同意协议: </span>
+         </div>
+         <div class="left input_text">
+           点击 提交 即表示您已同意 <span class="disStyle" (click)="diShow()">《任务发布与处理协议》</span>
+         </div>
+       </li>
+       <li class="li_one clearfloat li_btn">
+         <button class="btn-s" id="submit_m" (click)="submitMsg()">提交项目</button>
+       </li>
+   </ul>
+ </div>
+</ion-content>
+<div class="box_window">
+  <div class="box_textarea">
+      <h3 class="h3_title">《任务发布与处理协议》</h3>
+      <p class="all_texts">
+        第三条 本合伙组织经营期限双方约定：如果合作项目成功取得销售利润，则合作经营限期自动延长至的代理权结束为止,本合伙组织经营限期为三个月，三个月内甲方可提出退出经营，届时乙方全额返还甲方的出资金额,如本合伙经营三个月后，甲方没有提出异议，则合伙经营仍按协议约定进行,第四条 本合伙所产生的固定资产和盈余按照取得的销售利润的甲方50%、乙方50%的比例分配。销售利润计算方法为：卖出价格-进货价格-进货运费=销售利润。 　　第五条 双方共同经营，合伙人执行合伙事务所产生的收益归全体合伙人，所产生的亏损由全体合伙人按照利润比例分配承担,甲方只负责出资，其他所有经营事务都由乙方负责和解决,项目产品的销售利润，按月结算,本协议未尽事宜，双方可以补充规定，补充协议与本协议具同等效力,自协议签订之日起，乙方需要负责技术、市场开发、售后跟进、项目管理及日常事务,甲方具有监督权、建议权及了解账目明细权，乙方需配合甲方行使合法权利,本协议一式贰份，合伙人各一份。本协议自合伙人签字之日起生效。第三条 本合伙组织经营期限双方约定：如果合作项目成功取得销售利润，则合作经营限期自动延长至的代理权结束为止,本合伙组织经营限期为三个月，三个月内甲方可提出退出经营，届时乙方全额返还甲方的出资金额,如本合伙经营三个月后，甲方没有提出异议，则合伙经营仍按协议约定进行,第四条 本合伙所产生的固定资产和盈余按照取得的销售利润的甲方50%、乙方50%的比例分配。销售利润计算方法为：卖出价格-进货价格-进货运费=销售利润。 　　第五条 双方共同经营，合伙人执行合伙事务所产生的收益归全体合伙人，所产生的亏损由全体合伙人按照利润比例分配承担,甲方只负责出资，其他所有经营事务都由乙方负责和解决,项目产品的销售利润，按月结算,本协议未尽事宜，双方可以补充规定，补充协议与本协议具同等效力,自协议签订之日起，乙方需要负责技术、市场开发、售后跟进、项目管理及日常事务,甲方具有监督权、建议权及了解账目明细权，乙方需配合甲方行使合法权利,本协议一式贰份，合伙人各一份。本协议自合伙人签字之日起生效。第三条 本合伙组织经营期限双方约定：如果合作项目成功取得销售利润，则合作经营限期自动延长至的代理权结束为止,本合伙组织经营限期为三个月，三个月内甲方可提出退出经营，届时乙方全额返还甲方的出资金额,如本合伙经营三个月后，甲方没有提出异议，则合伙经营仍按协议约定进行,第四条 本合伙所产生的固定资产和盈余按照取得的销售利润的甲方50%、乙方50%的比例分配。销售利润计算方法为：卖出价格-进货价格-进货运费=销售利润。 　　第五条 双方共同经营，合伙人执行合伙事务所产生的收益归全体合伙人，所产生的亏损由全体合伙人按照利润比例分配承担,甲方只负责出资，其他所有经营事务都由乙方负责和解决,项目产品的销售利润，按月结算,本协议未尽事宜，双方可以补充规定，补充协议与本协议具同等效力,自协议签订之日起，乙方需要负责技术、市场开发、售后跟进、项目管理及日常事务,甲方具有监督权、建议权及了解账目明细权，乙方需配合甲方行使合法权利,本协议一式贰份，合伙人各一份。本协议自合伙人签字之日起生效。
+      </p>
+      <div class="ion_close" (click)="closeBtn()">×</div>
+  </div>
+</div>

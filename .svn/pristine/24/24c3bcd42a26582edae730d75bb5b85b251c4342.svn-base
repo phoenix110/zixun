@@ -1,0 +1,111 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "call-number": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-alipay-base": {
+            "APP_ID": "2088821711925880",
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-appminimize": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-qqsdk": {
+            "QQ_APP_ID": "101436337",
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-wechat": {
+            "WECHATAPPID": "wx0db2ada27c66c7a6",
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-weibosdk": {
+            "WEIBO_APP_ID": "231254828",
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "install": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "jpush-phonegap-plugin": {
+            "APP_KEY": "cd613b34d1061c4ec0936db6",
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        }
+    },
+    "dependent_plugins": {
+        "code-push": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "com.synconset.imagepicker": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-advanced-http": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-zip": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-code-push": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-ionic-webview": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-jcore": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "com.ionic1021.starter"
+        }
+    }
+}

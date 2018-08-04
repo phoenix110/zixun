@@ -1,0 +1,5 @@
+int drawable retry_btn_default 0x7f020000
+int drawable retry_btn_press 0x7f020001
+int drawable retry_btn_selector 0x7f020002
+int drawable weibosdk_common_shadow_top 0x7f020003
+int drawable weibosdk_empty_failed 0x7f020004

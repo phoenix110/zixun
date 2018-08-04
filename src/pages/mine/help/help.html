@@ -1,0 +1,33 @@
+
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 帮助中心 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+ 
+  <div class="help_wrap">
+     
+     <div class="help_area" *ngFor="let it of list">
+      <h5 class="tit">{{it.catename}}</h5>
+      <ul class="help_list">
+        <li *ngFor="let item of it.helplist;let i = index;" (click)="info(item)">
+          <p>{{i+1}}. {{item.title}}</p>
+          <span></span>
+        </li>
+        
+      </ul>
+     </div>
+            
+  </div>
+
+</ion-content>

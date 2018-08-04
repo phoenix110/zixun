@@ -1,0 +1,41 @@
+{
+  "_args": [
+    [
+      "fundebug-javascript@0.3.3",
+      "F:\\ionicWorkSpace\\ionic2_ykm"
+    ]
+  ],
+  "_from": "fundebug-javascript@0.3.3",
+  "_id": "fundebug-javascript@0.3.3",
+  "_inBundle": false,
+  "_integrity": "sha1-eUiCYm2yYbqlXSHK2S7j6edcjj0=",
+  "_location": "/fundebug-javascript",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "fundebug-javascript@0.3.3",
+    "name": "fundebug-javascript",
+    "escapedName": "fundebug-javascript",
+    "rawSpec": "0.3.3",
+    "saveSpec": null,
+    "fetchSpec": "0.3.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/fundebug-javascript/-/fundebug-javascript-0.3.3.tgz",
+  "_spec": "0.3.3",
+  "_where": "F:\\ionicWorkSpace\\ionic2_ykm",
+  "author": {
+    "name": "fundebug"
+  },
+  "description": "monitor errors of javascript application",
+  "keywords": [
+    "javascript",
+    "fundebug"
+  ],
+  "main": "release/fundebug.0.3.3.min.js",
+  "name": "fundebug-javascript",
+  "version": "0.3.3"
+}

@@ -1,0 +1,35 @@
+
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 关于我们 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="aboutus_wrap white">
+     
+     <div class="aboutus_html" style="text-align: center;">
+     	<img style="text-align: center;margin: 0 auto;" src="assets/imgs/logo.png" width="40%">
+     	<div [innerHTML]="info.content"></div>
+     
+     </div>
+     <div class="auth">
+      <p>Copyright @2016-2036</p>
+      <p>武汉人人有空信息科技有限公司</p>
+  </div>
+  </div> 
+  
+
+</ion-content>
+
+
+  		
+  

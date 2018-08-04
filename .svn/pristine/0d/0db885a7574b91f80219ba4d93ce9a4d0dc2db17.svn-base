@@ -1,0 +1,71 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()" *ngIf="isback"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 消息 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+<div class="ucontent_wrap">
+	     <!-- <div class="user_top">
+	        <span class="forward_icon"></span>
+	        <p class="user_position">我的消息</p>
+	     </div> -->
+	     <div class="message_tab" *ngIf="isLogin">
+     		<span [ngClass]="{'active':status == 0}" (click)="statusClick(0)">全部</span>
+     		<span [ngClass]="{'active':status == 1}" (click)="statusClick(1)">已读</span>
+     		<span [ngClass]="{'active':status == 2}" (click)="statusClick(2)">未读</span>
+     	</div>
+     	<ul class="message_list" *ngIf="isLogin">
+        <p *ngIf="list.length<1" style="text-align: center;background:none;">暂无消息~</p>
+     		<li *ngFor="let it of list; let i = index"  [ngClass]="{'read':it.status == 0}">
+     			<a href="#" (click)="detail(it.id)">
+     				<div class="name_time">
+     					<h5>{{it.title}}</h5>
+     					<span>{{it.addtime}}</span>
+     				</div>
+     				<p class="intro" [innerHTML]="it.content"></p>
+     			</a>
+          <span (click)="del(it.id,i)">删除</span>
+     		</li>
+
+            <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="正在加载...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+     		
+      </ul>
+      <div style="margin:0 auto;text-align: center;padding-top:20px; " class="message_list" *ngIf="!isLogin">您还没有登录喔，请前往个人中心登录~</div>
+     </div>
+     <!-- 弹层 -->
+<div class="common_mask">
+    <div class="common_box">
+        <div class="common_tit">
+            <h3>我要竞标</h3>
+            <a href="javascript:;" class="close_btn"></a>
+        </div>
+        <div class="common_cont_wrap">
+            <p class="notice_intro pt25">
+                参与竞标后，不可撤回，您确认要参与此任务的竞标？
+            </p>
+            <div class="bid_ope">
+               <button type="button" class="concel active">取消</button>
+               <button type="button" class="confirm">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</ion-content>

@@ -1,0 +1,68 @@
+<ion-header>
+  <div class="top_sear" style="position: fixed;z-index: 999;">
+    <!-- <span class="forward_icon"></span> -->
+    <div class="searbar_wrap">
+      <ion-input mode="ios" id="searbar_txt" class="searbar_txt" [(ngModel)]="keywords" type="search"  placeholder="关键词 | 省市" [ngModelOptions]="{standalone: true}" (change)="searchDemand()" (keyup)="onSearchKeyUp($event)"></ion-input>
+      <button type="submit" class="top_searbtn" (click)="searchDemand()"></button>
+    </div>
+    <!--<span class="forward_icon"></span> -->
+  </div>
+  <div class="list_header_wrap">
+    <ul class="list_tab" style="position: fixed;top: 44px;">
+      <li class="tabitem" (click)="getData(2)" [ngClass]="{'active': menu==2}"><a href="#">推荐</a></li>
+      
+      <li class="tabitem" (click)="getData(1)" [ngClass]="{'active': menu==1}"><a href="#">地方快讯</a></li>
+
+      <li class="tabitem" (click)="getData(3)" [ngClass]="{'active': menu==3}"><a href="#">热点</a></li>
+    </ul>
+  </div>
+
+</ion-header>
+<ion-content>     
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="下拉刷新"
+          refreshingSpinner="circles"
+          refreshingText="刷新...">
+        </ion-refresher-content>
+      </ion-refresher> 
+    <div #listresult *ngIf="!pipei">     
+    <div class="list_cont_wrap">
+      <ul class="list" *ngIf="!showCate" style="margin-top: 44px;">
+
+          <ion-list>
+              <ion-item *ngFor="let item of items" (click)="itemClicked($event,item)">
+                <!--
+                <ion-avatar item-left>
+                  <img src="{{(item.pic_url == null || (item.pic_url).trim() == '')?'assets/img/user_pic.png':(url_prefix+item.pic_url)}}">
+                </ion-avatar>
+                -->
+                <ion-thumbnail item-start>
+                    <img src="{{(item.pic_url == null || (item.pic_url).trim() == '')?'assets/img/user_pic.png':(url_prefix+item.pic_url)}}">
+                </ion-thumbnail>
+                <div class="title">            
+                    <p>{{item.pic_title}}</p>
+                </div>
+                <div class="subtitle">
+                    <span><em>{{item.detail}}</em></span>
+                </div>
+                
+              </ion-item>
+        
+           </ion-list>
+
+        <li *ngIf="items.length<1" style="text-align: center;">暂无结果~</li>
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="正在加载...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>        
+      </ul>        
+    </div> 
+</div>
+
+  
+  
+</ion-content>

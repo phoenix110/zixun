@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar *ngIf="!noback">
+    <ion-buttons>
+      <button ion-button (click)="dismiss()" ion-button icon-only color="royal">
+        返回
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-navbar *ngIf="noback">
+    <ion-title mode="ios">登录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="login_logo">
+    <a href="#">
+      <img src="assets/img/login_logo.png" alt="有空吗" title="有空吗">
+    </a>
+  </div>
+  <div class="logininfo_list">
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <input type="hidden" formControlName="flag" [(ngModel)]="flag">
+
+        <div class="phone_item">
+           <input type="text" formControlName="phone" [(ngModel)]="user" class="phone_txt" placeholder="手机号" clearInput>
+        </div>
+
+        <div class="regyzm_item" *ngIf="captcheLogin">
+          <ion-input type="number" (press)="onOpress($event)" class="lgyzm_txt" placeholder="验证码" formControlName="verificationCode"></ion-input>
+           <a href="javascript:;" (click)="getCaptche()" class="getyzm_btn">{{ codeHtml }}</a>
+      </div>
+
+        <div class="pwd_item" *ngIf="!captcheLogin" style="position:relative;">
+           <input type="password" id="password" name="password" [(ngModel)]="pwd" formControlName="password" class="pwd_txt" placeholder="密码" clearInput>
+            <img src="assets/img/invisible.png" (click)="show_s('2')" class="see1" *ngIf="!change_show1"
+                    style="position: absolute;
+                           top:12px;
+                           right:16px;
+                           width:25px;
+                           height:20px;"
+                    />
+            <img src="assets/img/visible.png" (click)="show_s('1')" class="see1" *ngIf="change_show1"
+                 style="position: absolute;
+                           top:12px;
+                           right:16px;
+                           width:25px;
+                           height:20px;"
+                    />
+        </div>
+        <div class="forget_yzmlg">
+          <span class="forget" [ngClass]="{'active':remember==true}" (click)="doremember()"><i></i>记住账号</span>
+          <a href="#" (click)="loginCode('2')" class="yzmlg" *ngIf="!captcheLogin">验证码登陆</a>
+          <a href="#" (click)="loginCode('1')" class="yzmlg" *ngIf="captcheLogin">密码登陆</a>
+        </div>
+        <div class="login_btn">
+          <button type="submit" [disabled]="!loginForm.valid||submitted">登 录</button>
+        </div>
+      </form>
+      <div class="goto_reglink">
+        <p>没有账号？<a href="#" (click)="toRegister()">立即注册</a></p>
+      </div>
+  </div>
+  <h5 class="otherlg_tit">第三方账号登录</h5>
+  <div class="otherlogin_path">
+      <a href="#" (click)="qqLogin()" class="qq"></a>
+      <a href="#" (click)="wxLogin()" class="weixin"></a>
+      <a href="#" (click)="sinaLogin()" class="sina"></a>
+  </div>
+
+
+</ion-content>
+

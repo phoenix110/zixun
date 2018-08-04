@@ -1,0 +1,105 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 雇主认证 </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+<div class="ucontent_wrap">
+  
+    <div *ngIf="authStatus==NULL">
+         <ul class="certify_section01">
+          <li (click)="presentProfileModal(7,submitMap.name)">
+               <span>真实姓名</span>
+               <span class="edite_link">
+                 {{submitMap.name}}
+               </span>  
+            </li>
+            <li (click)="presentProfileModal(8,submitMap.idcard)">
+               <span>身份证号码</span>
+               <span class="edite_link">
+                {{submitMap.idcards}}
+               </span>  
+            </li>
+            <li (click)="presentProfileModal(2,submitMap.now_areaid)">
+               <span>地区</span>
+               <span class="edite_link">
+                 {{cityname}}
+               </span>  
+            </li>
+            <li (click)="presentProfileModal(3,submitMap.now_address)">
+               <span>居住地址</span>
+               <span class="edite_link">
+                 {{submitMap.now_address}}
+               </span>  
+            </li>
+         </ul>
+         <div class="certify_section">
+             <h3 class="tit">身份证照片</h3>
+             <div class="upload_wrap">
+                 <div (click)="upIdcardThumb(1)">
+                     <p>
+                       <i></i>
+                       <span>正面</span>
+                    </p>
+                 </div>
+                 <div (click)="upIdcardThumb(2)">
+                    <p>
+                       <i></i>
+                       <span>反面</span>
+                    </p>
+                 </div>
+             </div>
+              <div class="uploaded_area" *ngIf="upimg || upimg1">
+               <div *ngIf="upimg">
+                 <span><img src="{{ idcardthumb }}" alt="正面" title="正面"></span>
+               </div>
+               <div *ngIf="upimg1">
+                 <span><img src="{{ idcardthumb1 }}" alt="反面" title="反面"></span>
+               </div>
+             </div>
+         </div>
+         <div class="acount_verify">
+           <h3 class="tit">账号验证</h3>
+           <div class="acount_verify_item">
+               <input type="text" value="{{uinfo.telphone}}">
+           </div>
+           <div class="acount_verify_yzm">
+               <input type="text" [(ngModel)]="submitMap.code" placeholder="验证码">
+               <button type="button" (click)="getCode()">{{ codeHtml }}</button>
+           </div>
+         </div>
+         <div class="submit_wrap">
+             <button type="submit" (click)="save()">提交认证</button>
+         </div>
+    </div>
+
+    <div *ngIf="authStatus!=NULL">
+          
+           <div class="certify_check">
+             <h3 *ngIf="authStatus==0" class="tit">审核中</h3>
+             <h3 *ngIf="authStatus==2" class="tit">失败</h3>
+             <h3 *ngIf="authStatus==1" class="tit">成功</h3>
+             <p><span>姓名：</span>{{submitMap.name}}</p>
+             <p><span>身份证：</span>{{submitMap.idcards}}</p>
+             <div *ngIf="authStatus!=1" class="resubmit_wrap">
+               <a href="#" (click)="resetForm()">重新提交</a>
+             </div>
+           </div>
+          
+    </div>
+
+
+</div>   
+
+
+</ion-content>

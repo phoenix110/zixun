@@ -1,0 +1,36 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 我的下载 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+   
+   <div class="ucontent_wrap">
+     
+     <div class="down_tab">
+            <span [ngClass]="{'active':catemenu==0}" (click)="setCate(0)">全部</span>
+            <span [ngClass]="{'active':it.id==catemenu}" (click)="setCate(it.id)" *ngFor="let it of cate">{{it.name}}</span>
+     </div>
+     <ul class="mydown_list">
+        <li (click)="info(item)" *ngFor="let item of list">
+            <h5>{{item.title}}</h5>
+            <div>
+                <span>浏览：<em>{{item.views}}</em></span>
+                <span>下载：<em>{{item.downloads}}</em></span>
+                <span>日期：<em>{{item.time}}</em></span>
+            </div>
+        </li>
+        <li *ngIf="list.length==0">无下载内容~</li>
+     </ul> 
+ </div>     
+
+</ion-content>

@@ -1,0 +1,137 @@
+<ion-content>
+<section style="position: fixed;z-index: 99;background: #fff;width: 100%;">
+    <div class="top">
+      <div class="top_logo">
+        <a href="#">
+          <img src="http://renrenyoukong.com/app/login_logo.png" alt="有空吗" title="有空吗">
+        </a>
+      </div>
+      <div class="topsear_wrap">
+        <input type="text" class="topsear_txt" (click)="inputFocus()" [(ngModel)]="keywords" placeholder="搜索环保任务">
+        <button type="submit" (click)="searchDemand()" class="upsear_btn"></button>
+      </div>
+    </div>
+  </section>
+
+    <div class="swipe01" style="margin-top: 54px;">
+
+      <ion-slides *ngIf="banner.length > 1" loop="true" pager zoom="true" autoplay='4000' style="background-color: white">
+        <ion-slide *ngFor="let b of banner">
+              <img data-src="{{fileurl}}{{b.img}}">
+        </ion-slide>
+      </ion-slides>
+    
+      
+    </div>
+
+
+
+
+    <section>
+    <div class="labarea">
+      <div class="lab_pic">
+        <img src="assets/img/lab.png" alt="" title="">
+      </div>
+      <div class="lab_data">
+        <p (click)="goDemand()">总环保任务<br><b>{{allcount}} 个</b></p>
+        <p>总成交额<br><b>{{alltotal}} 元</b></p>
+      </div>
+    </div>
+ </section>
+ <section>
+    <div class="lastest_box">
+      <div class="lastest_tit">
+        <h3>最新环保任务</h3>
+        <a href="#" (click)="getNew()" class="freshbtn">刷新</a>
+      </div>
+      <ul class="lastest_list">
+        <li *ngFor="let item of news" (click)="itemClick(item)">
+
+          <h5 class="name">
+            <a href="#">{{item.name}}</a>
+          </h5>
+          <p class="price_pertime">
+            <b>￥{{item.reward}}</b>
+            <span>竞标{{item.offercount}}人  |  {{item.closedate}} <em *ngIf="item.recommend == 3" style="color: #ff704a;">加急</em></span>
+          </p>
+        </li>
+        
+      </ul>
+    </div>
+</section>
+<section>
+  <div class="hot_box">
+    <div class="hot_tit">
+      <h3>热门环保任务</h3>
+      <a href="#" (click)="goDemand()" class="more_btn">更多任务</a>
+    </div>
+    <div class="hot_types_wrap">
+      <div class="hot_types">
+      <span (click)="goCateDemand(c.id)" *ngFor="let c of cate">{{c.name}}</span>
+      </div>
+    </div>  
+
+   
+    <ul class="hot_list">
+      <li *ngFor="let item of list" (click)="itemClick(item)">
+        <div class="money_tit">
+          <span>￥{{item.reward}}</span>
+          <p>
+            <a href="#">{{item.name}}</a>
+          </p>
+        </div>
+        <div class="type">
+            <span *ngFor="let citem of item.phase">{{citem.name}}</span>
+        </div>
+        <div class="state">
+            <span>竞标：<em>{{item.offercount}}</em></span>
+            <span>截止日期：<i>{{item.closedate}}</i></span>
+            <span>浏览：<i>{{item.viewcount}}</i></span>
+            <span>收藏：<i>{{item.collectcount}}</i></span>
+            <span *ngIf="item.recommend == 3"> <em style="color: #ff704a;">加急</em></span>
+        </div>
+      </li>
+      <li *ngIf="list.length < 1">无信息~</li>
+      
+    </ul>
+  </div>
+</section>
+<section>
+  <div class="designer_box">
+    <div class="designer_tit">
+      <h3>优秀设计师</h3>
+    </div>
+    <div class="designer_list">
+      <dl *ngFor="let item of designers" (click)="user(item)">
+        <dt class="per">
+          <a href="#">
+            <img src="{{item.avatar}}" alt="{{item.name}}" title="{{item.name}}">
+          </a>
+        </dt>
+        <dd class="infos">
+          <h5 class="name">
+            <a href="#">{{item.name}}</a>
+          </h5>
+          <div class="num_price">
+            <span>承接任务：<em>{{item.experiencecount}}</em></span>
+            <span>总成交额：<em>{{item.total}}元</em></span>
+          </div>
+          <div class="commends">
+            <span class="label">用户评价</span>
+            <div class="starts" id="{{item.comment}}">
+              <i [ngClass]="{'on':item.comment > 0}"></i>
+              <i [ngClass]="{'on':item.comment > 1}"></i>
+              <i [ngClass]="{'on':item.comment > 2}"></i>
+              <i [ngClass]="{'on':item.comment > 3}"></i>
+              <i [ngClass]="{'on':item.comment > 4}"></i>
+            </div>
+          </div>
+        </dd>
+      </dl>
+      
+    </div>
+  </div>
+</section>
+
+
+</ion-content>

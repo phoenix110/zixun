@@ -1,0 +1,51 @@
+{
+  "_from": "@ionic-native/file-opener",
+  "_id": "@ionic-native/file-opener@4.5.2",
+  "_inBundle": false,
+  "_integrity": "sha512-FMpqiaPrdVusAX+Ga7we/ldzp3NdQBC7Okkg8T6QRRKEjdkhrcc7Mgq/0g7dwBIzZBYSI+XhcHeEDH5uws28cw==",
+  "_location": "/@ionic-native/file-opener",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@ionic-native/file-opener",
+    "name": "@ionic-native/file-opener",
+    "escapedName": "@ionic-native%2ffile-opener",
+    "scope": "@ionic-native",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ionic-native/file-opener/-/file-opener-4.5.2.tgz",
+  "_shasum": "3f48c7be0b9d181c167646840c50679a574d4068",
+  "_spec": "@ionic-native/file-opener",
+  "_where": "F:\\ionicWorkSpace\\ionic2_ykm",
+  "author": {
+    "name": "ionic"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/ionic-native/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Ionic Native - Native plugins for ionic apps",
+  "homepage": "https://github.com/ionic-team/ionic-native#readme",
+  "license": "MIT",
+  "module": "index.js",
+  "name": "@ionic-native/file-opener",
+  "peerDependencies": {
+    "@ionic-native/core": "^4.2.0",
+    "@angular/core": "*",
+    "rxjs": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/ionic-native.git"
+  },
+  "typings": "index.d.ts",
+  "version": "4.5.2"
+}

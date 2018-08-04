@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_action_remove.png",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_remove.png"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_action_next_item.png",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_next_item.png"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_action_previous_item.png",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_previous_item.png"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_action_previous_item.png",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_previous_item.png"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_action_remove.png",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_remove.png"
+    },
+    {
+        "merged": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_action_next_item.png",
+        "source": "F:\\ionicWorkSpace\\ionic2_ykm_svn\\platforms\\android\\res\\drawable-xxhdpi\\ic_action_next_item.png"
+    }
+]

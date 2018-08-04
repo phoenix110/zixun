@@ -1,0 +1,51 @@
+{
+  "_from": "@ionic-native/alipay",
+  "_id": "@ionic-native/alipay@4.4.2",
+  "_inBundle": false,
+  "_integrity": "sha512-8x9a7dDvmDGu+mzXinGLn1QAYeMFIEAGMDmyVQ8Drg5T4zRWiINVC6tES37xGdh5SzM5lECheqKOPUcVedvOpw==",
+  "_location": "/@ionic-native/alipay",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@ionic-native/alipay",
+    "name": "@ionic-native/alipay",
+    "escapedName": "@ionic-native%2falipay",
+    "scope": "@ionic-native",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ionic-native/alipay/-/alipay-4.4.2.tgz",
+  "_shasum": "8f2c0ea4936db1a2bf28ec1071b3d93133a08a4d",
+  "_spec": "@ionic-native/alipay",
+  "_where": "F:\\ionicWorkSpace\\ionic2_ykm",
+  "author": {
+    "name": "ionic"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/ionic-native/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Ionic Native - Native plugins for ionic apps",
+  "homepage": "https://github.com/ionic-team/ionic-native#readme",
+  "license": "MIT",
+  "module": "index.js",
+  "name": "@ionic-native/alipay",
+  "peerDependencies": {
+    "@ionic-native/core": "^4.2.0",
+    "@angular/core": "*",
+    "rxjs": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/ionic-native.git"
+  },
+  "typings": "index.d.ts",
+  "version": "4.4.2"
+}

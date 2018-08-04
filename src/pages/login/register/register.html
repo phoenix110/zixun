@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button (click)="dismiss()" ion-button icon-only color="royal">
+        返回
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerForm" (ngSubmit)="confirm(registerForm.value)">
+    <div class="login_logo">
+    <a href="#">
+      <img src="assets/img/login_logo.png" alt="有空吗" title="有空吗">
+    </a>
+  </div>
+  <div class="logininfo_list">
+      <div class="phone_item">
+          <ion-input type="number" placeholder="手机号"  class="phone_txt" formControlName="phone"></ion-input>
+      </div>
+      <div class="regyzm_item">
+          <ion-input type="number" placeholder="验证码" class="lgyzm_txt" formControlName="verificationCode"></ion-input>
+           <a href="javascript:;" (click)="getCode()" class="getyzm_btn">{{ codeHtml }}</a>
+      </div>
+      <div class="regpwd_item">
+          <ion-input type="password" placeholder="密码" class="pwd_txt" formControlName="password"></ion-input>
+      </div>
+      <div class="protocol_item">
+          <p>点击&nbsp;立即注册&nbsp;即表示您已同意<a href="#">《有空吗用户服务协议》</a></p>
+      </div>
+      <div class="login_btn">
+          <button ion-button block type="submit" [disabled]="!registerForm.valid">注  册</button>
+        </div>
+      <div class="goto_reglink pb0">
+        <p>已有账号&nbsp;&nbsp;<a href="#" (click)="login()">立即登录</a></p>
+      </div>
+  </div>
+  <h5 class="otherlg_tit">第三方账号注册</h5>
+  <div class="otherlogin_path">
+      <a href="#" class="qq"></a>
+      <a href="#" class="weixin"></a>
+      <a href="#" class="sina"></a>
+  </div>
+
+    
+  </form>
+</ion-content>

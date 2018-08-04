@@ -1,0 +1,25 @@
+<a style="float:right;font-size:12px;" href="http://github.com/ionic-team/ionic-native/edit/master/src/@ionic-native/plugins/alipay/index.ts#L61">
+  Improve this doc
+</a>
+
+# Alipay
+
+```
+$ ionic cordova plugin add cordova-alipay-base --variable APP_ID=your_app_id
+$ npm install --save @ionic-native/alipay
+```
+
+## [Usage Documentation](https://ionicframework.com/docs/native/alipay/)
+
+Plugin Repo: [https://github.com/xueron/cordova-alipay-base](https://github.com/xueron/cordova-alipay-base)
+
+This plugin is used for Alipay APP support. Integrated with the latest SDK.
+
+Requires Cordova plugin: `cordova-alipay-base`. For more info, please see the [Alipay plugin docs](https://github.com/xueron/cordova-alipay-base).
+
+## Supported platforms
+- Android
+- iOS
+
+
+

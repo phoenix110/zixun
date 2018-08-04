@@ -1,0 +1,24 @@
+
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> {{item.title}} </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+ <div class="help_wrap">
+     
+     <div class="help_html" [innerHTML]="item.content">
+     </div>       
+  </div>
+
+</ion-content>

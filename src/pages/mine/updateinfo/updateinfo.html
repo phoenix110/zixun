@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button (click)="dismiss()" ion-button icon-only color="royal">
+        返回
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ucontent_wrap" *ngIf="type==1">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">修改昵称</p>
+     </div>
+     <div class="modify_name">
+      <input type="text" [(ngModel)]="val" value="{{ val }}">
+      <p>请输入3~10个字</p>
+      <button type="button" (click)="confirm()">确认</button>
+     </div>
+  </div>    
+
+<div class="ucontent_wrap" *ngIf="type==2">
+   
+
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">选择地区</p>
+     </div>
+     <ul class="modify_adr">
+        <li *ngFor="let it of cityDatas" (click)="cityClick(it)">
+          <span>{{it.areaname}}</span>        
+        </li>
+       
+     </ul>
+  </div>    
+
+<div class="ucontent_wrap" *ngIf="type==3">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">居住地址</p>
+     </div>
+     <div class="modify_detail_adr">
+      <textarea placeholder="详细地址" [(ngModel)]="val" class="detail_area">{{val}}</textarea>
+      <button type="button" (click)="confirm()">确认</button>
+     </div>
+  </div>    
+
+ <div class="ucontent_wrap" *ngIf="type==4">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">擅长领域</p>
+     </div>
+     <ul class="modify_adr">
+        <li class="link_item" *ngFor="let it of skillData" (click)="skillClick(it)">
+          <span>{{it.name}}</span>        
+        </li>
+     </ul>
+  </div>  
+
+
+<div class="ucontent_wrap" *ngIf="type==5">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">换绑手机</p>
+     </div>
+     <div class="modify_phone">
+      <input type="text"  [(ngModel)]="val" value="{{ val }}" placeholder="新手机号">
+        <div class="yzm">
+            <input type="text" name="" placeholder="验证码">
+            <button type="button" (click)="getCode()">{{ codeHtml }}</button>
+        </div>
+      <button type="button">验证后绑定新手机号</button>
+     </div>
+  </div> 
+
+  <div class="ucontent_wrap" *ngIf="type==6">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">个人说明</p>
+     </div>
+     <div class="modify_intro">
+      <textarea placeholder="个人说明" [(ngModel)]="val" class="intro_area">{{ val }}</textarea>
+      <p>简要描述，限<em>100</em>字内</p>
+      <button type="button" (click)="confirm()">确认</button>
+     </div>
+  </div>  
+
+    <div class="ucontent_wrap" *ngIf="type==7">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">真实姓名</p>
+     </div>
+     <div class="modify_name">
+      <input type="text" [(ngModel)]="val" value="{{ val }}">
+      <p>请输入合法姓名</p>
+      <button type="button" (click)="confirm()">确认</button>
+     </div>
+  </div> 
+
+
+    <div class="ucontent_wrap" *ngIf="type==8">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">身份证号码</p>
+     </div>
+     <div class="modify_name">
+      <input type="text" [(ngModel)]="val" value="{{ val }}">
+      <p>请输入合法的身份证编号</p>
+      <button type="button" (click)="confirm()">确认</button>
+     </div>
+  </div> 
+
+  <div class="ucontent_wrap" *ngIf="type==9">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">登录密码</p>
+     </div>
+     <div class="modify_name">
+      <input type="password" minlength="9" [(ngModel)]="val" value="{{ val }}">
+      <p>请输入9位以上密码</p>
+      <button type="button" (click)="confirm()">确认</button>
+     </div>
+  </div>  
+  <div class="ucontent_wrap" *ngIf="type==10">
+     <div class="user_top">
+        <span class="forward_icon"></span>
+        <p class="user_position">支付密码</p>
+     </div>
+     <div class="modify_name">
+      <input type="password" minlength="9" [(ngModel)]="val" value="{{ val }}">
+      <p>请输入9位以上支付密码</p>
+      <button type="button" (click)="confirm()">确认</button>
+     </div>
+  </div>  
+
+
+</ion-content>

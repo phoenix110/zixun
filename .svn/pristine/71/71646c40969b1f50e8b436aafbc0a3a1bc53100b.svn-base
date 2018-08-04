@@ -1,0 +1,53 @@
+{
+  "_args": [
+    [
+      "@ionic-native/code-push@4.4.2",
+      "F:\\ionicWorkSpace\\ionic2_ykm"
+    ]
+  ],
+  "_from": "@ionic-native/code-push@4.4.2",
+  "_id": "@ionic-native/code-push@4.4.2",
+  "_inBundle": false,
+  "_integrity": "sha512-Uh/Tly2eAgrQ09Q4ipFjFghqWBQyEDSUJl1OhHtcTttqYzdIwdNYEFftsMa79uvdQnb5D0OEfvTQp4qoAQ14Tg==",
+  "_location": "/@ionic-native/code-push",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@ionic-native/code-push@4.4.2",
+    "name": "@ionic-native/code-push",
+    "escapedName": "@ionic-native%2fcode-push",
+    "scope": "@ionic-native",
+    "rawSpec": "4.4.2",
+    "saveSpec": null,
+    "fetchSpec": "4.4.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ionic-native/code-push/-/code-push-4.4.2.tgz",
+  "_spec": "4.4.2",
+  "_where": "F:\\ionicWorkSpace\\ionic2_ykm",
+  "author": {
+    "name": "ionic"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/ionic-native/issues"
+  },
+  "description": "Ionic Native - Native plugins for ionic apps",
+  "homepage": "https://github.com/ionic-team/ionic-native#readme",
+  "license": "MIT",
+  "module": "index.js",
+  "name": "@ionic-native/code-push",
+  "peerDependencies": {
+    "@ionic-native/core": "^4.2.0",
+    "@angular/core": "*",
+    "rxjs": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/ionic-native.git"
+  },
+  "typings": "index.d.ts",
+  "version": "4.4.2"
+}

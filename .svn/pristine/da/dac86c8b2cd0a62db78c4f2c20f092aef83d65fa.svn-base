@@ -1,0 +1,120 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="back()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 我的资料 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+<div class="ucontent_wrap">
+     
+     <ul class="info_list">
+      <li (click)="avatarClick()">
+         <span>头像</span>
+         <span class="edite_link">
+           <img src="{{uinfo.avatar}}" alt="{{uinfo.nickname}}" title="{{uinfo.nickname}}">
+         </span>
+      </li>
+      <li style="display: none;">
+         <span>用户名</span>
+         <span class="edite_nolink">
+           <i style="color:#bdbdbd">不可更改</i> {{uinfo.username}}
+         </span>
+      </li>
+      <li (click)="presentProfileModal(1,uinfo.nickname)">
+         <span>昵称</span>
+         <span class="edite_link">
+           {{uinfo.nickname}}
+         </span>
+      </li>
+      <li (click)="sexClick()">
+         <span>性别</span>
+         <span class="edite_link" *ngIf="uinfo.sex == 0">未设置</span>
+         <span class="edite_link" *ngIf="uinfo.sex == 1">男</span>
+         <span class="edite_link" *ngIf="uinfo.sex == 2">女</span>
+      </li>
+      <li (click)="presentProfileModal(2,uinfo.area)">
+         <span>地区</span>
+         <span class="edite_link">
+           {{uinfo.area}}
+         </span>
+      </li>
+      <li (click)="presentProfileModal(3,uinfo.address)">
+         <span>居住地址</span>
+         <span class="edite_link">
+           {{uinfo.address}}
+         </span>
+      </li>
+      <li (click)="presentProfileModal(4,uinfo.skill)" *ngIf="uinfo.type==2">
+         <span>擅长领域</span>
+         <span class="edite_link" *ngIf="!uinfo.skill">未设置</span>
+         <span class="edite_link" *ngIf="uinfo.skill">
+          {{uinfo.skill}}
+         </span>
+      </li>
+      <li (click)="presentProfileModal(4,uinfo.skill)" *ngIf="uinfo.type==1">
+         <span>业务领域</span>
+         <span class="edite_link" *ngIf="!uinfo.skill">未设置</span>
+         <span class="edite_link" *ngIf="uinfo.skill">
+          {{uinfo.skill}}
+         </span>
+      </li>
+      <li (click)="presentProfileModal(5,uinfo.telphone)">
+         <span>联系电话</span>
+         <span class="edite_link">
+           {{uinfo.telphone}}
+         </span>
+      </li>
+      <li (click)="presentProfileModal(6,uinfo.introduce)" *ngIf="uinfo.type==2">
+         <span>个人说明</span>
+         <span class="edite_link">
+           {{uinfo.introduce}}
+         </span>
+      </li>
+     </ul>
+     <div class="info_ope">
+      <button (click)="saveinfo()" type="button">保存</button>
+     </div>
+  </div> 
+
+<!-- 弹层 -->
+<div class="common_mask" *ngIf="upAvatarModal">
+    <div class="common_box">
+        <div class="common_tit">
+            <h3>上传头像</h3>
+            <a (click)="upAvatar(0)" href="javascript:;" class="close_btn"></a>
+        </div>
+        <div class="common_cont_wrap">
+          <ul class="modify_pic_list">
+            <li (click)="upAvatar(1)">拍照</li>
+            <li (click)="upAvatar(2)">从手机相册选择</li>
+          </ul>
+        </div>
+  </div>
+</div>
+
+<div class="common_mask"  *ngIf="setSexModal">
+    <div class="common_box">
+        <div class="common_tit">
+            <h3>选择性别</h3>
+            <a (click)="setSex(0)" href="javascript:;" class="close_btn"></a>
+        </div>
+        <div class="common_cont_wrap">
+            <ul class="modify_sex_list">
+                <li [ngClass]="{'active':uinfo.sex == 1}" (click)="setSex(1)">男</li>
+                <li [ngClass]="{'active':uinfo.sex == 2}" (click)="setSex(2)">女</li>
+            </ul>
+        </div>
+  </div>
+</div>
+
+
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-content>
+ 
+ <div class="ucontent_wrap">
+    <div class="user_top">
+        <span (click)="dismiss()" class="forward_icon"></span>
+        <p class="user_position">邮箱绑定</p>
+     </div>
+     <div class="bind_area">
+      <input type="email" [(ngModel)]="email" placeholder="邮箱地址">
+        <div class="yzm">
+            <input type="text" [(ngModel)]="captche" placeholder="验证码">
+            <button type="button" (click)="getCode()">{{codeHtml}}</button>
+        </div>
+      <button type="button" (click)="savebind()">绑定邮箱</button>
+     </div>
+  </div>    
+  
+</ion-content>

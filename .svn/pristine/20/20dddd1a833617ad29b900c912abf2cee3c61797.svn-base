@@ -1,0 +1,47 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="dismiss()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 账户提现 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+ <div class="ucontent_wrap">
+       <div class="pay_money_box">
+          <p>余额<span><em>{{uinfo.balance}}</em> 元</span></p>
+          <div>
+            <input type="text" [(ngModel)]="amount" placeholder="提现金额">
+          </div>
+        </div>
+        <div class="getcash_box">
+          <h5 class="tit">提现方式</h5>
+          <ul class="getcash_list">
+            <li class="getcash_item">
+              <input type="text" [(ngModel)]="account" class="acount_txt" placeholder="支付宝账号">
+            </li>
+            <li class="getcash_item">
+              <input type="password" [(ngModel)]="paypassword" class="pwd_txt" placeholder="支付密码">
+            </li>
+            <li class="getcash_item">
+              <input type="text" [(ngModel)]="captche" class="yzm_txt" placeholder="验证码" placeholder="">
+              <a href="javascript:;" (click)="getCode()" class="getyzm_btn">{{codeHtml}}</a>
+            </li>
+            <li class="getcash_item">
+              <p class="notice">有空吗 将在3个工作日内处理您的提现要求，请耐心等待工作人员的处理，如有疑问，请咨询<em>027-25636696</em></p>
+            </li>
+          </ul>
+        </div>
+       <div class="confirm_wrap">
+          <button type="button" (click)="savecash()" class="confirm_btn">提现</button>
+          <button type="button" style="background: #e0e0e0;margin-top: 10px;" (click)="dismiss()" class="confirm_btn">取消</button>
+       </div>
+  </div> 
+  
+</ion-content>

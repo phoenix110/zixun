@@ -1,0 +1,51 @@
+{
+  "_from": "@ionic-native/qqsdk",
+  "_id": "@ionic-native/qqsdk@4.4.2",
+  "_inBundle": false,
+  "_integrity": "sha512-vZJ2BZoAH5pAxDeXZ97MMlyZ6Y+sPDkQfiUIOkA+cxL7MSZiQ6Bp3CTfQRxzSyd/tMJC8pP9kHjRuEz2tYBQcw==",
+  "_location": "/@ionic-native/qqsdk",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@ionic-native/qqsdk",
+    "name": "@ionic-native/qqsdk",
+    "escapedName": "@ionic-native%2fqqsdk",
+    "scope": "@ionic-native",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@ionic-native/qqsdk/-/qqsdk-4.4.2.tgz",
+  "_shasum": "43e212c009d553d5540e30f765a8a2f1a6478684",
+  "_spec": "@ionic-native/qqsdk",
+  "_where": "F:\\ionicWorkSpace\\ionic2_ykm",
+  "author": {
+    "name": "ionic"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/ionic-native/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Ionic Native - Native plugins for ionic apps",
+  "homepage": "https://github.com/ionic-team/ionic-native#readme",
+  "license": "MIT",
+  "module": "index.js",
+  "name": "@ionic-native/qqsdk",
+  "peerDependencies": {
+    "@ionic-native/core": "^4.2.0",
+    "@angular/core": "*",
+    "rxjs": "^5.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/ionic-native.git"
+  },
+  "typings": "index.d.ts",
+  "version": "4.4.2"
+}

@@ -1,0 +1,133 @@
+{
+    "ionic-plugin-keyboard": {
+        "source": {
+            "type": "registry",
+            "id": "ionic-plugin-keyboard@~2.2.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist@1.3.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device@1.1.4"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-splashscreen@~4.0.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "call-number": {
+        "source": {
+            "type": "registry",
+            "id": "mx.ferreyra.callnumber@~0.0.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-appminimize": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-appminimize@~1.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-inappbrowser@1.7.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-alipay-base": {
+        "source": {
+            "type": "local",
+            "path": "..\\cordova-alipay-base"
+        },
+        "is_top_level": true,
+        "variables": {
+            "APP_ID": "2088821711925880"
+        }
+    },
+    "cordova-plugin-qqsdk": {
+        "source": {
+            "type": "local",
+            "path": "..\\Cordova_QQ"
+        },
+        "is_top_level": true,
+        "variables": {
+            "QQ_APP_ID": "101436337"
+        }
+    },
+    "cordova-plugin-weibosdk": {
+        "source": {
+            "type": "local",
+            "path": "..\\cordova_weibo"
+        },
+        "is_top_level": true,
+        "variables": {
+            "WEIBO_APP_ID": "231254828"
+        }
+    },
+    "cordova-plugin-file-opener2": {
+        "source": {
+            "type": "local",
+            "path": "..\\cordova-plugin-file-opener2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "jpush-phonegap-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "jpush-phonegap-plugin"
+        },
+        "is_top_level": true,
+        "variables": {
+            "APP_KEY": "cd613b34d1061c4ec0936db6"
+        }
+    },
+    "cordova-plugin-jcore": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-jcore"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "install": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/weelion/phonegap-plugin-install",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-wechat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-wechat@2.1.0"
+        },
+        "is_top_level": true,
+        "variables": {
+            "WECHATAPPID": "wx0db2ada27c66c7a6"
+        }
+    }
+}

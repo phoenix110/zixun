@@ -1,0 +1,42 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="dismiss()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 账户充值 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="ucontent_wrap">
+       <div class="pay_money_box">
+          <p>余额<span><em>{{uinfo.balance}}</em> 元</span></p>
+          <div>
+            <input type="text" [(ngModel)]="amount" placeholder="充值金额">
+          </div>
+        </div>
+        <div class="pay_online">
+          <h5 class="tit">支付方式</h5>
+          <ul class="online_list">
+            <li (click)="setPayway(1)">
+              <span class="pay01">支付宝</span>
+              <i [ngClass]="{'active':payway==1}"></i>
+            </li>
+            <li (click)="setPayway(2)">
+              <span class="pay02">微信支付</span>
+              <i [ngClass]="{'active':payway==2}"></i>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="confirm_wrap">
+          <button type="button" (click)="save()" class="confirm_btn">充值</button>
+          <button type="button" style="background: #e0e0e0;margin-top: 10px;" (click)="dismiss()" class="confirm_btn">取消</button>
+        </div>
+  </div>         
+</ion-content>

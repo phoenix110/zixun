@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons left (click)="back()">
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button>
+    </ion-buttons>
+
+    <ion-title mode="ios"> 积分与签到 </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+   <div id="box">
+        <div class="left">
+            <span class="nowF">当前积分：</span><b class="jifen"></b>
+        </div>
+        <div class="right">
+            <button class="btn-s" (click)="qiandao()">签到</button>
+        </div>
+   </div>
+   <div class="ms">
+       <span>如需查看积分规则，请 <a href="http://www.renrenyoukong.com/score.docx">下载</a></span>
+   </div>
+
+</ion-content>

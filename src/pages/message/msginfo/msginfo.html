@@ -1,0 +1,27 @@
+<ion-header>
+ 
+  <ion-toolbar> 
+
+    <ion-buttons left (click)="dismiss()"> 
+      <button ion-button><ion-icon name="ios-arrow-back-outline"></ion-icon></button> 
+    </ion-buttons> 
+
+    <ion-title mode="ios"> 我的消息 </ion-title> 
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="ucontent_wrap">
+         
+   <div class="message_detail">
+          <h5>{{info.title}}</h5> 
+          <p>{{info.addtime}}</p>
+          <p [innerHTML]="info.content"></p>  
+     </div>
+  </div>
+
+
+</ion-content>
